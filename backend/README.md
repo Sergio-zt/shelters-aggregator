@@ -27,6 +27,7 @@ Examples:
 ```cmd
 poetry run black .
 poetry run flake8 .
+poetry run pytest
 ```
 
 ## Environment Setup
@@ -105,3 +106,12 @@ docker compose down
 
 The PostgreSQL data is stored in a named Docker volume and persists when containers are stopped or recreated.
 
+## Anonymous Visitor
+
+GET /visitor identifies anonymous visitors using a UUID.
+
+Generates a UUID if the visitor_id cookie is missing or invalid.
+
+Reuses the existing cookie if it contains a valid UUID.
+
+Returns the UUID in the JSON response and stores it in an HttpOnly session cookie.
