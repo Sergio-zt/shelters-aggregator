@@ -8,10 +8,12 @@ from alembic import context
 import os
 import sys
 
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+# Navigate three levels up: alembic -> backend -> /app
+root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, root_path)
 
-from app.db.database import Base
-from app.models.locations import Location
+from backend.app.db.database import Base
+from backend.app.models.places import Place, City, District, Facility
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
