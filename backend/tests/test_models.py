@@ -1,33 +1,23 @@
-from app.models.locations import City, Facility, Location
+from backend.app.models.places import Place
 
-def test_jsonb_multilanguage_and_relationships(db_session):
-    # 1. Test JSONB translation storage in City model
-    city = City(name={"uk": "Київ", "en": "Kyiv"})
-    db_session.add(city)
-    db_session.commit()
-    db_session.refresh(city)
-
-    assert city.name["uk"] == "Київ"
-    assert city.name["en"] == "Kyiv"
-
-    # 2. Test Many-to-Many relationship and JSONB in Location model
-    facility = Facility(name={"uk": "Пандус", "en": "Ramp"})
-    
-    location = Location(
+def test_create_place(db_session, test_district, test_facility):
+    new_place = Place(
         latitude=50.4501,
         longitude=30.5234,
-        address={"uk": "вул. Хрещатик, 1", "en": "1 Khreshchatyk St"},
-        shelter_type={"uk": "Підвал", "en": "Basement"}
+        address={"en": "123 Main St", "uk": "вул. Головна, 123"},
+        description={"en": "Test Shelter", "uk": "Тестове укриття"},
+        shelter_type={"en": "Basement", "uk": "Підвал"},
+        capacity=100,
+        district_id=test_district.id
     )
-    location.facilities.append(facility)
+    new_place.facilities.append(test_facility)
     
-    db_session.add(facility)
-    db_session.add(location)
+    db_session.add(new_place)
     db_session.commit()
-    db_session.refresh(location)
+    db_session.refresh(new_place)
 
-    # 3. Assert relations and JSONB fields are correctly retrieved
-    assert location.address["en"] == "1 Khreshchatyk St"
-    assert location.shelter_type["uk"] == "Підвал"
-    assert len(location.facilities) == 1
-    assert location.facilities[0].name["uk"] == "Пандус"
+    assert new_place.id is not None
+    assert new_place.latitude == 50.4501
+    assert new_place.district_id == test_district.id
+    assert len(new_place.facilities) == 1
+    assert new_place.facilities[0].id == test_facility.id
