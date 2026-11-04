@@ -12,8 +12,9 @@ import sys
 root_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, root_path)
 
-from backend.app.db.database import Base
-from backend.app.models.places import Place, City, District, Facility
+# Imports below need root_path in sys.path, so they can't be at the top
+from backend.app.db.database import Base  # noqa: E402
+import backend.app.models.places  # noqa: E402, F401 - registers models in Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
@@ -63,7 +64,7 @@ def run_migrations_offline() -> None:
 def run_migrations_online() -> None:
     """Run migrations in 'online' mode."""
     configuration = config.get_section(config.config_ini_section, {})
-    
+
     configuration["sqlalchemy.url"] = os.getenv("DATABASE_URL")
 
     connectable = engine_from_config(
@@ -73,9 +74,7 @@ def run_migrations_online() -> None:
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
