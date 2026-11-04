@@ -115,3 +115,36 @@ Generates a UUID if the visitor_id cookie is missing or invalid.
 Reuses the existing cookie if it contains a valid UUID.
 
 Returns the UUID in the JSON response and stores it in an HttpOnly session cookie.
+
+## Database Migrations
+
+Apply migrations inside the backend container:
+
+```bash
+docker compose exec backend sh -c "cd backend && alembic upgrade head"
+```
+
+## Running Tests in Docker
+
+By default the Docker image installs only main dependencies. To run tests in the container, create a local `compose.override.yaml` in the project root (it is ignored by git):
+
+```yaml
+services:
+  backend:
+    build:
+      args:
+        INSTALL_DEV: "true"
+    volumes:
+      - ./backend:/app/backend
+    environment:
+      - TEST_DATABASE_URL=postgresql+psycopg://shelters_test:test_password@test_db:5432/shelters_test_db
+    depends_on:
+      - test_db
+```
+
+Rebuild the backend and run the tests:
+
+```bash
+docker compose up --build -d
+docker compose exec backend sh -c "cd backend && pytest"
+```
