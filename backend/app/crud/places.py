@@ -5,6 +5,9 @@ from backend.app.models.places import District, Place
 
 EARTH_RADIUS_METERS = 6371000
 
+# Languages stored in JSONB fields. To support a new language, just add it here
+SUPPORTED_LANGUAGES = ["uk", "en"]
+
 
 def distance_in_meters(lat: float, lng: float):
     # Haversine formula: distance between two points on a sphere.
@@ -35,14 +38,14 @@ def search_places(
     stmt = select(Place)
 
     if q:
-        # Search in the Ukrainian address and type (e.g. "метро", "укриття")
+        # Search in address and type in every language,
+        # so "метро" and "metro" both find a metro station
         search_term = f"%{q}%"
-        stmt = stmt.where(
-            or_(
-                Place.address["uk"].astext.ilike(search_term),
-                Place.type["uk"].astext.ilike(search_term),
-            )
-        )
+        conditions = []
+        for lang in SUPPORTED_LANGUAGES:
+            conditions.append(Place.address[lang].astext.ilike(search_term))
+            conditions.append(Place.type[lang].astext.ilike(search_term))
+        stmt = stmt.where(or_(*conditions))
 
     if city_id:
         # Place has no city_id, the city is known through the district

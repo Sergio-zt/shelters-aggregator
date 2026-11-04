@@ -15,7 +15,8 @@ router = APIRouter()
     summary="Search places",
     description=(
         "Returns a list of places (shelters, metro stations). "
-        "Can be filtered by text (Ukrainian address or type), city and district. "
+        "Can be filtered by text (address or type in any language), "
+        "city and district. "
         "Geo search: pass lat, lng and radius (in meters) together, "
         "then only places inside the radius are returned, the nearest first. "
         "All filters can be combined. "

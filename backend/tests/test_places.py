@@ -95,6 +95,31 @@ def test_search_places_by_type(client, db_session):
     assert data[0]["type"]["uk"] == "Станція метро"
 
 
+def test_search_places_in_english(client, db_session):
+    db_session.add_all(
+        [
+            Place(
+                type={"uk": "Станція метро", "en": "Metro station"},
+                latitude=50.44,
+                longitude=30.52,
+            ),
+            Place(
+                type={"uk": "Укриття", "en": "Shelter"},
+                latitude=50.45,
+                longitude=30.53,
+            ),
+        ]
+    )
+    db_session.commit()
+
+    response = client.get("/places/search", params={"q": "metro"})
+
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data) == 1
+    assert data[0]["type"]["en"] == "Metro station"
+
+
 # Kyiv, Maidan Nezalezhnosti
 KYIV_LAT = 50.4501
 KYIV_LNG = 30.5234
