@@ -116,6 +116,14 @@ Reuses the existing cookie if it contains a valid UUID.
 
 Returns the UUID in the JSON response and stores it in an HttpOnly session cookie.
 
+## Places Search
+
+GET /places/search returns a list of places.
+
+Optional filters: `q` (search in the Ukrainian address), `city_id`, `district_id`.
+
+Pagination: `skip` (default 0) and `limit` (default 20, max 100).
+
 ## Database Migrations
 
 Apply migrations inside the backend container:
