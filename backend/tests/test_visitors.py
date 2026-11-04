@@ -34,7 +34,7 @@ def test_visitor_reuses_existing_valid_cookie():
 def test_visitor_generates_new_uuid_when_cookie_invalid():
     client.cookies.clear()
     client.cookies = {"visitor_id": "invalid-uuid"}
-    
+
     response = client.get("/visitor")
 
     assert response.status_code == 200
