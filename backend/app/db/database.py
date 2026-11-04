@@ -1,8 +1,9 @@
 import os
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-# Retrieve the database URL passed by Docker from Artem's .env configuration
+# Database URL comes from the .env file (passed by Docker Compose)
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
 # Initialize the SQLAlchemy engine
@@ -13,6 +14,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Base class for declarative models
 Base = declarative_base()
+
 
 def get_db():
     db = SessionLocal()

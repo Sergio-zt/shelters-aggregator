@@ -6,8 +6,15 @@ RUN pip install --no-cache-dir poetry
 
 COPY pyproject.toml poetry.lock ./
 
+# Set INSTALL_DEV=true to also install dev tools (pytest, black, flake8)
+ARG INSTALL_DEV=false
+
 RUN poetry config virtualenvs.create false \
-    && poetry install --only main --no-root --no-interaction --no-ansi
+    && if [ "$INSTALL_DEV" = "true" ]; then \
+        poetry install --with dev --no-root --no-interaction --no-ansi; \
+    else \
+        poetry install --only main --no-root --no-interaction --no-ansi; \
+    fi
 
 COPY . /app/backend
 
