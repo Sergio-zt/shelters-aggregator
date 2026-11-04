@@ -118,9 +118,13 @@ Returns the UUID in the JSON response and stores it in an HttpOnly session cooki
 
 ## Places Search
 
-GET /places/search returns a list of places.
+GET /places/search returns a list of places (shelters, metro stations).
 
-Optional filters: `q` (search in the Ukrainian address), `city_id`, `district_id`.
+Optional filters: `q` (search in the Ukrainian address or type), `city_id`, `district_id`.
+
+Geo search: `lat`, `lng` and `radius` (in meters, max 50 km) must be passed together. Only places inside the radius are returned, the nearest first.
+
+All filters can be combined. If nothing is found, an empty list is returned. Invalid parameters return `422`.
 
 Pagination: `skip` (default 0) and `limit` (default 20, max 100).
 
