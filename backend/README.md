@@ -116,6 +116,18 @@ Reuses the existing cookie if it contains a valid UUID.
 
 Returns the UUID in the JSON response and stores it in an HttpOnly session cookie.
 
+## Places Search
+
+GET /places/search returns a list of places (shelters, metro stations).
+
+Optional filters: `q` (search in the address or type, in any supported language: `uk`, `en`), `city_id`, `district_id`.
+
+Geo search: `lat`, `lng` and `radius` (in meters, max 50 km) must be passed together. Only places inside the radius are returned, the nearest first.
+
+All filters can be combined. If nothing is found, an empty list is returned. Invalid parameters return `422`.
+
+Pagination: `skip` (default 0) and `limit` (default 20, max 100).
+
 ## Database Migrations
 
 Apply migrations inside the backend container:
