@@ -25,6 +25,26 @@ def test_search_places_without_filters(client, db_session, test_district):
     assert len(response.json()) == 2
 
 
+def test_search_places_returns_rating_fields(client, db_session):
+    db_session.add(
+        Place(
+            latitude=50.44,
+            longitude=30.49,
+            capacity_tier={"uk": "Висока місткість (>1000 осіб)"},
+        )
+    )
+    db_session.commit()
+
+    response = client.get("/places/search")
+
+    assert response.status_code == 200
+    place = response.json()[0]
+    assert place["capacity_tier"]["uk"] == "Висока місткість (>1000 осіб)"
+    assert place["reviews_count"] == 0
+    # null tells the frontend to show "no reviews yet" instead of 0 stars
+    assert place["average_rating"] is None
+
+
 def test_search_places_by_address(client, db_session):
     db_session.add_all(
         [
