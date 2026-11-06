@@ -12,7 +12,12 @@ class PlaceResponse(BaseModel):
     # Multi-language fields (JSONB in the database)
     address: dict[str, str] | None = None
     type: dict[str, str] | None = None
+    capacity_tier: dict[str, str] | None = None
 
     latitude: float
     longitude: float
     photo_url: str | None = None
+
+    reviews_count: int = 0
+    # null = no ratings yet (not 0 stars)
+    average_rating: float | None = None
