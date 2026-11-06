@@ -23,3 +23,30 @@ def test_create_place(db_session, test_district, test_facility):
     assert new_place.district_id == test_district.id
     assert len(new_place.facilities) == 1
     assert new_place.facilities[0].id == test_facility.id
+
+
+def test_place_capacity_tier(db_session):
+    place = Place(
+        latitude=50.45,
+        longitude=30.52,
+        capacity_tier={
+            "uk": "Висока місткість (>1000 осіб)",
+            "en": "High capacity (>1000 people)",
+        },
+    )
+    db_session.add(place)
+    db_session.commit()
+    db_session.refresh(place)
+
+    assert place.capacity_tier["uk"] == "Висока місткість (>1000 осіб)"
+
+
+def test_new_place_has_no_rating(db_session):
+    place = Place(latitude=50.45, longitude=30.52)
+    db_session.add(place)
+    db_session.commit()
+    db_session.refresh(place)
+
+    # A new place has no reviews: rating is empty (not 0 stars)
+    assert place.reviews_count == 0
+    assert place.average_rating is None

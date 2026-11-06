@@ -74,12 +74,20 @@ class Place(Base):
     # Multi-language fields
     address = Column(JSONB, nullable=True)
     type = Column(JSONB, nullable=True)
+    # Capacity category from the analyst dataset,
+    # e.g. {"uk": "Висока місткість (>1000 осіб)"}
+    capacity_tier = Column(JSONB, nullable=True)
 
     # Coordinates
     latitude = Column(Float, nullable=False)
     longitude = Column(Float, nullable=False)
 
     photo_url = Column(String, nullable=True)
+
+    # Reviews summary
+    reviews_count = Column(Integer, nullable=False, default=0, server_default="0")
+    # NULL means "no ratings yet", so the frontend doesn't show 0 stars
+    average_rating = Column(Float, nullable=True)
 
     # Relationships
     district = relationship("District", back_populates="places")
