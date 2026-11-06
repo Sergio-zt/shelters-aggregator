@@ -1,24 +1,28 @@
 import os
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
+from sqlalchemy.orm import declarative_base
 
 # Database URL comes from the .env file (passed by Docker Compose)
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
-# Initialize the SQLAlchemy engine
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+# Create an asynchronous database engine
+engine = create_async_engine(SQLALCHEMY_DATABASE_URL, pool_pre_ping=True)
 
-# Create a sessionmaker for database transactions
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+# Create a factory for asynchronous database sessions
+SessionLocal = async_sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine,
+    expire_on_commit=False,
+    class_=AsyncSession,
+)
 
 # Base class for declarative models
 Base = declarative_base()
 
 
-def get_db():
-    db = SessionLocal()
-    try:
+# Provide a database session for each request
+async def get_db():
+    async with SessionLocal() as db:
         yield db
-    finally:
-        db.close()
