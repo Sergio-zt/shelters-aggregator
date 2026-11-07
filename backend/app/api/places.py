@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.app.crud.places import search_places
 from backend.app.db.database import get_db
@@ -23,7 +23,7 @@ router = APIRouter()
         "Returns an empty list if nothing is found."
     ),
 )
-def search_places_endpoint(
+async def search_places_endpoint(
     q: str | None = Query(default=None, description="Search by address or type"),
     city_id: int | None = None,
     district_id: int | None = None,
@@ -34,7 +34,7 @@ def search_places_endpoint(
     ),
     skip: int = Query(default=0, ge=0),
     limit: int = Query(default=20, ge=1, le=100),
-    db: Session = Depends(get_db),
+    db: AsyncSession = Depends(get_db),
 ):
     # Geo search makes sense only when all three params are passed
     geo_params = [lat, lng, radius]
@@ -44,7 +44,7 @@ def search_places_endpoint(
             detail="lat, lng and radius must be passed together",
         )
 
-    return search_places(
+    return await search_places(
         db=db,
         q=q,
         city_id=city_id,

@@ -1,5 +1,5 @@
 from sqlalchemy import func, or_, select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.app.models.places import District, Place
 
@@ -24,8 +24,8 @@ def distance_in_meters(lat: float, lng: float):
     return 2 * EARTH_RADIUS_METERS * func.asin(func.sqrt(a))
 
 
-def search_places(
-    db: Session,
+async def search_places(
+    db: AsyncSession,
     q: str | None = None,
     city_id: int | None = None,
     district_id: int | None = None,
@@ -63,4 +63,6 @@ def search_places(
 
     stmt = stmt.offset(skip).limit(limit)
 
-    return list(db.scalars(stmt).all())
+    # await: wait for the DB answer without blocking other requests
+    result = await db.scalars(stmt)
+    return list(result.all())
