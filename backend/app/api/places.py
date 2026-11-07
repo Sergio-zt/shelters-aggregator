@@ -1,9 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
+from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
 
-from backend.app.crud.places import search_places
+from backend.app.crud.places import search_places, get_places
 from backend.app.db.database import get_db
-from backend.app.schemas.places import PlaceResponse
+from backend.app.schemas.places import PlaceResponse, PlaceCatalogResponse
 
 router = APIRouter()
 
@@ -55,3 +56,21 @@ def search_places_endpoint(
         skip=skip,
         limit=limit,
     )
+
+
+@router.get(
+    "/places",
+    response_model=list[PlaceCatalogResponse],
+    tags=["places"],
+    summary="Get places catalog",
+    description=(
+        "Retrieves a list of all available places, including shelters "
+        "and metro stations. "
+        "Each place contains its identifier, geographic coordinates, "
+        "address, type, capacity information, rating, review count "
+        "and available facilities. "
+        "Multilingual fields are returned as language-keyed objects."
+    ),
+)
+async def places_catalog(db: AsyncSession = Depends(get_db)):
+    return await get_places(db)
