@@ -1,7 +1,7 @@
 from backend.app.models.places import Place
 
 
-def test_create_place(db_session, test_district, test_facility):
+async def test_create_place(db_session, test_district, test_facility):
     new_place = Place(
         external_id="kyiv-001",
         latitude=50.4501,
@@ -14,8 +14,10 @@ def test_create_place(db_session, test_district, test_facility):
     new_place.facilities.append(test_facility)
 
     db_session.add(new_place)
-    db_session.commit()
-    db_session.refresh(new_place)
+    await db_session.commit()
+    # In async, relationships are not loaded automatically when we read them,
+    # so we ask to load "facilities" right here
+    await db_session.refresh(new_place, ["facilities"])
 
     assert new_place.id is not None
     assert new_place.latitude == 50.4501
@@ -25,7 +27,7 @@ def test_create_place(db_session, test_district, test_facility):
     assert new_place.facilities[0].id == test_facility.id
 
 
-def test_place_capacity_tier(db_session):
+async def test_place_capacity_tier(db_session):
     place = Place(
         latitude=50.45,
         longitude=30.52,
@@ -35,17 +37,17 @@ def test_place_capacity_tier(db_session):
         },
     )
     db_session.add(place)
-    db_session.commit()
-    db_session.refresh(place)
+    await db_session.commit()
+    await db_session.refresh(place)
 
     assert place.capacity_tier["uk"] == "Висока місткість (>1000 осіб)"
 
 
-def test_new_place_has_no_rating(db_session):
+async def test_new_place_has_no_rating(db_session):
     place = Place(latitude=50.45, longitude=30.52)
     db_session.add(place)
-    db_session.commit()
-    db_session.refresh(place)
+    await db_session.commit()
+    await db_session.refresh(place)
 
     # A new place has no reviews: rating is empty (not 0 stars)
     assert place.reviews_count == 0
