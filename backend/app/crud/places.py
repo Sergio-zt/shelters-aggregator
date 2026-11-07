@@ -1,5 +1,6 @@
 from sqlalchemy import func, or_, select
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.orm import Session, selectinload
 
 from backend.app.models.places import District, Place
 
@@ -64,3 +65,18 @@ def search_places(
     stmt = stmt.offset(skip).limit(limit)
 
     return list(db.scalars(stmt).all())
+
+
+async def get_place(db: AsyncSession, place_id: int) -> Place | None:
+    """Retrieve place from the database."""
+
+    result = await db.execute(
+        select(Place)
+        .options(
+            selectinload(Place.district).selectinload(District.city),
+            selectinload(Place.facilities),
+        )
+        .where(Place.id == place_id)
+    )
+
+    return result.scalar_one_or_none()
