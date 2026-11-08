@@ -1,7 +1,12 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Cookie, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.app.crud.places import search_places, get_place, get_places
+from backend.app.crud.places import (
+    search_places,
+    get_place,
+    get_places,
+    add_place_view,
+)
 from backend.app.db.database import get_db
 from backend.app.schemas.places import (
     PlaceResponse,
@@ -102,3 +107,33 @@ async def retrieve_place(place_id: int, db: AsyncSession = Depends(get_db)):
         )
 
     return place
+
+
+@router.post(
+    "/places/{place_id}/views",
+    status_code=201,
+    tags=["places"],
+    summary="Save place view",
+    description=(
+        "Saves one view of the place details page (for analytics). "
+        "The frontend calls it every time the details page is opened. "
+        "The visitor is taken from the visitor_id cookie, if it exists. "
+        "Returns 404 if the place does not exist."
+    ),
+)
+async def save_place_view(
+    place_id: int,
+    visitor_id: str | None = Cookie(default=None),
+    db: AsyncSession = Depends(get_db),
+):
+    place = await get_place(db, place_id)
+
+    if place is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Place not found",
+        )
+
+    await add_place_view(db, place.id, visitor_id)
+
+    return {"detail": "View saved"}

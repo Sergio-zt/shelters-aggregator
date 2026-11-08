@@ -1,8 +1,10 @@
+import uuid
+
 from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from backend.app.models.places import District, Place
+from backend.app.models.places import District, Place, PlaceView
 
 EARTH_RADIUS_METERS = 6371000
 
@@ -95,3 +97,18 @@ async def get_place(db: AsyncSession, place_id: int) -> Place | None:
     )
 
     return result.scalar_one_or_none()
+
+
+async def add_place_view(db: AsyncSession, place_id: int, visitor_id: str | None):
+    """Save one view of the place details page."""
+
+    # The cookie can contain anything, keep it only if it is a real UUID
+    if visitor_id is not None:
+        try:
+            visitor_id = uuid.UUID(visitor_id)
+        except ValueError:
+            visitor_id = None
+
+    place_view = PlaceView(place_id=place_id, visitor_id=visitor_id)
+    db.add(place_view)
+    await db.commit()
