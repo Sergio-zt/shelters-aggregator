@@ -1,7 +1,10 @@
 import os
 
+from dotenv import load_dotenv
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import declarative_base
+
+load_dotenv()
 
 # Database URL comes from the .env file (passed by Docker Compose)
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")

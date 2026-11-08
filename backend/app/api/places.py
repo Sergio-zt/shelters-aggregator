@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.app.crud.places import search_places, get_places
+from backend.app.crud.places import search_places, get_place, get_places
 from backend.app.db.database import get_db
-from backend.app.schemas.places import PlaceResponse, PlaceCatalogResponse
+from backend.app.schemas.places import PlaceResponse, PlaceRetrieveResponse, PlaceCatalogResponse
 
 router = APIRouter()
 
@@ -73,3 +73,28 @@ async def search_places_endpoint(
 )
 async def places_catalog(db: AsyncSession = Depends(get_db)):
     return await get_places(db)
+
+
+@router.get(
+    "/places/{place_id}",
+    response_model=PlaceRetrieveResponse,
+    tags=["places"],
+    summary="Get place details",
+    description=(
+        "Retrieves detailed information about a specific shelter or metro station "
+        "by its ID. Returns its address, type, district, capacity information, "
+        "available facilities, average rating and review count. "
+        "Multilingual fields are returned as complete language-keyed objects. "
+        "Returns 404 if the place does not exist."
+    ),
+)
+async def retrieve_place(place_id: int, db: AsyncSession = Depends(get_db)):
+    place = await get_place(db, place_id)
+
+    if place is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Place not found",
+        )
+
+    return place

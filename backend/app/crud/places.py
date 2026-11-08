@@ -80,3 +80,18 @@ async def get_places(db: AsyncSession) -> list[Place]:
     )
 
     return list(result.scalars().all())
+
+
+async def get_place(db: AsyncSession, place_id: int) -> Place | None:
+    """Retrieve place from the database."""
+
+    result = await db.execute(
+        select(Place)
+        .options(
+            selectinload(Place.district).selectinload(District.city),
+            selectinload(Place.facilities),
+        )
+        .where(Place.id == place_id)
+    )
+
+    return result.scalar_one_or_none()
