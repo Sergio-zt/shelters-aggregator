@@ -3,7 +3,11 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from backend.app.crud.places import search_places, get_place, get_places
 from backend.app.db.database import get_db
-from backend.app.schemas.places import PlaceResponse, PlaceRetrieveResponse, PlaceCatalogResponse
+from backend.app.schemas.places import (
+    PlaceResponse,
+    PlaceRetrieveResponse,
+    PlaceCatalogResponse,
+)
 
 router = APIRouter()
 
