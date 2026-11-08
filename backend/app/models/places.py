@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, Float, String, ForeignKey, Table
-from sqlalchemy.dialects.postgresql import JSONB
+from sqlalchemy import Column, Integer, Float, String, ForeignKey, Table, DateTime, func
+from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import relationship
 
 from backend.app.db.database import Base
@@ -93,4 +93,21 @@ class Place(Base):
     district = relationship("District", back_populates="places")
     facilities = relationship(
         "Facility", secondary=place_facilities_association, back_populates="places"
+    )
+
+
+class PlaceView(Base):
+    # One row = one opening of the place details page (for analytics)
+    __tablename__ = "place_views"
+
+    id = Column(Integer, primary_key=True, index=True)
+    place_id = Column(
+        Integer, ForeignKey("places.id", ondelete="CASCADE"), nullable=False
+    )
+    # Anonymous visitor from the "visitor_id" cookie.
+    # Empty if the cookie is missing. There is no visitors table, so no ForeignKey
+    visitor_id = Column(UUID(as_uuid=True), nullable=True)
+    # The database sets the time itself when the row is created
+    viewed_at = Column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
     )
