@@ -2,7 +2,6 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-
 from backend.app.models.places import District, Place
 
 EARTH_RADIUS_METERS = 6371000
@@ -68,6 +67,19 @@ async def search_places(
     # await: wait for the DB answer without blocking other requests
     result = await db.scalars(stmt)
     return list(result.all())
+
+
+async def get_places(db: AsyncSession) -> list[Place]:
+    """Retrieve places from the database."""
+
+    result = await db.execute(
+        select(Place).options(
+            selectinload(Place.district).selectinload(District.city),
+            selectinload(Place.facilities),
+        )
+    )
+
+    return list(result.scalars().all())
 
 
 async def get_place(db: AsyncSession, place_id: int) -> Place | None:
