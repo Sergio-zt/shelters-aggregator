@@ -1,0 +1,323 @@
+{
+  "scenarios": [
+    {
+      "scenario": "feedback-validation-and-language",
+      "passed": true,
+      "resize": "none",
+      "draftPreserved": true,
+      "whitespaceDisabled": true
+    },
+    {
+      "scenario": "feedback-mock-submit",
+      "passed": true
+    },
+    {
+      "scenario": "search-no-matches-and-escape",
+      "passed": true
+    },
+    {
+      "scenario": "filter-ramp",
+      "passed": true,
+      "resultCount": 2
+    },
+    {
+      "scenario": "selected-details-language-switch",
+      "passed": true
+    },
+    {
+      "scenario": "add-shelter-dirty-guard-and-mock-submit",
+      "passed": true
+    },
+    {
+      "scenario": "mobile-menu-escape",
+      "passed": true
+    },
+    {
+      "scenario": "map-zoom-search-area",
+      "passed": true,
+      "hiddenDuringZoom": true,
+      "visibleAfterIdle": true
+    },
+    {
+      "scenario": "language-persisted-after-reload",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "headings": [
+        "Фільтри"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "filters",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Станція метро «Житомирська»"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "details",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Залишити відгук"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Залишити відгук"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-error",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Додати укриття"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "add",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Про сервіс / Допомога"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "about",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Поруч не знайдено укриттів"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "empty",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Не вдалося завантажити укриття"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "error",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Укриття поруч"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "map-error",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Укриття в цій області",
+        "Геолокацію вимкнено",
+        "Геолокацію вимкнено"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "denied",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Укриття в цій області",
+        "Ви перебуваєте поза Києвом",
+        "Ви перебуваєте поза Києвом"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "outside",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Шукаємо місця…"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "search-empty",
+      "width": 390
+    },
+    {
+      "headings": [
+        "Фільтри",
+        "Доступ",
+        "Зручності"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "filters",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Укриття поруч",
+        "Станція метро «Житомирська»",
+        "Зручності"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "details",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Залишити відгук"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Залишити відгук"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-error",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Додати укриття",
+        "Тип",
+        "Відомі вам зручності"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "add",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Про сервіс / Допомога",
+        "Звідки беруться дані",
+        "Що означають позначки доступу"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "about",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Поруч не знайдено укриттів"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "empty",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Не вдалося завантажити укриття"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "error",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Укриття поруч"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "map-error",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Укриття в цій області",
+        "Геолокацію вимкнено",
+        "Геолокацію вимкнено"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "denied",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Укриття в цій області",
+        "Ви перебуваєте поза Києвом",
+        "Ви перебуваєте поза Києвом"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "outside",
+      "width": 1440
+    },
+    {
+      "headings": [
+        "Шукаємо місця…"
+      ],
+      "lang": "uk",
+      "overflow": false,
+      "resize": null,
+      "state": "search-empty",
+      "width": 1440
+    },
+    {
+      "lang": "en",
+      "overflow": false,
+      "state": "home",
+      "width": 320
+    },
+    {
+      "lang": "en",
+      "overflow": false,
+      "state": "home",
+      "width": 768
+    },
+    {
+      "lang": "en",
+      "overflow": false,
+      "state": "home",
+      "width": 1024
+    }
+  ],
+  "console": []
+}

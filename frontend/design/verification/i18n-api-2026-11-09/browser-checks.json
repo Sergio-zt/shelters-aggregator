@@ -1,0 +1,136 @@
+{
+  "scenarios": [
+    {
+      "scenario": "initial-backend-uk",
+      "center": "30.376800,50.453750",
+      "heading": "Укриття в цій області",
+      "lang": "uk",
+      "pins": 6,
+      "scroll": 0,
+      "title": "SafePlace — Укриття Києва",
+      "zoom": "13.014"
+    },
+    {
+      "scenario": "confirmed-en",
+      "center": "30.376800,50.453750",
+      "heading": "Shelters in this area",
+      "lang": "en",
+      "pins": 6,
+      "scroll": 0,
+      "title": "SafePlace — Kyiv Shelter Finder",
+      "zoom": "13.014"
+    },
+    {
+      "scenario": "persisted-en-after-reload",
+      "center": "30.375000,50.454700",
+      "heading": "Shelters in this area",
+      "lang": "en",
+      "pins": 0,
+      "scroll": 0,
+      "title": "SafePlace — Kyiv Shelter Finder",
+      "zoom": "13.300"
+    },
+    {
+      "scenario": "selected-en-baseline",
+      "center": "30.390100,50.457500",
+      "heading": "Shelters in this area",
+      "lang": "en",
+      "pins": 2,
+      "scroll": 0,
+      "title": "SafePlace — Kyiv Shelter Finder",
+      "zoom": "15.000"
+    },
+    {
+      "scenario": "selected-switch-uk",
+      "center": "30.390100,50.457500",
+      "heading": "Укриття в цій області",
+      "lang": "uk",
+      "pins": 2,
+      "scroll": 0,
+      "title": "SafePlace — Укриття Києва",
+      "zoom": "15.000"
+    },
+    {
+      "center": "30.390100,50.457500",
+      "comment": "Test draft / Чернетка",
+      "context": "Sviatoshyn metro station · Beresteiskyi Ave, 144",
+      "lang": "en",
+      "scenario": "feedback-draft-preserved"
+    },
+    {
+      "checked": 1,
+      "label": "Показати 4 укриття",
+      "lang": "uk",
+      "scenario": "filter-draft-language"
+    },
+    {
+      "scenario": "chosen-uk-place",
+      "center": "30.365700,50.455100",
+      "heading": "Укриття в цій області",
+      "lang": "uk",
+      "pins": 4,
+      "scroll": 0,
+      "title": "SafePlace — Укриття Києва",
+      "zoom": "13.300",
+      "query": "Житомирська, Київ"
+    },
+    {
+      "center": "30.365700,50.455100",
+      "filters": "Filters, 1 active",
+      "lang": "en",
+      "query": "Zhytomyrska, Kyiv",
+      "scenario": "chosen-place-switch-en"
+    },
+    {
+      "address": "Вулиця Тестова, 1",
+      "lang": "uk",
+      "scenario": "suggestion-draft-preserved",
+      "selectedTypes": [
+        "Підвал",
+        "Можна з тваринами"
+      ]
+    },
+    {
+      "scenario": "mock-suggestion-submit",
+      "result": "Надіслано",
+      "externalSubmission": false
+    }
+  ],
+  "layouts": [
+    {
+      "headerVisible": true,
+      "overflow": false,
+      "searchTop": 94,
+      "titleBottom": 80,
+      "width": 320
+    },
+    {
+      "headerVisible": true,
+      "overflow": false,
+      "searchTop": 94,
+      "titleBottom": 80,
+      "width": 390
+    },
+    {
+      "headerVisible": false,
+      "overflow": false,
+      "searchTop": 64,
+      "titleBottom": 0,
+      "width": 768
+    },
+    {
+      "headerVisible": false,
+      "overflow": false,
+      "searchTop": 64,
+      "titleBottom": 0,
+      "width": 1024
+    },
+    {
+      "headerVisible": false,
+      "overflow": false,
+      "searchTop": 64,
+      "titleBottom": 0,
+      "width": 1440
+    }
+  ]
+}

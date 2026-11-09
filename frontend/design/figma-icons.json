@@ -1,0 +1,428 @@
+[
+  {
+    "name": "Icon/Access",
+    "file": "public/assets/figma/Icon/Access.svg",
+    "sourceFileName": "Icon/Access.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=32-1931",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "461b35f7d3d9bbc2984af1a0319598051685e64d8d07e1df4fd621800091f02a"
+  },
+  {
+    "name": "Icon/Amenity/WC",
+    "file": "public/assets/figma/Icon/Amenity/WC.svg",
+    "sourceFileName": "Icon/Type=WC.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=147-1995&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "186e22c2d3bc295260b4618c3bb9cc59bbf6326e26a7c6fa691954484b42d722"
+  },
+  {
+    "name": "Icon/Amenity/Power",
+    "file": "public/assets/figma/Icon/Amenity/Power.svg",
+    "sourceFileName": "Icon/Type=Power.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=147-1989&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "9e9b7d0be5d8a11ac249dd6a4818a5cf68ed6dc57c11c3bd9bc7e669a04111fe"
+  },
+  {
+    "name": "Icon/Amenity/Wi-Fi",
+    "file": "public/assets/figma/Icon/Amenity/Wi-Fi.svg",
+    "sourceFileName": "Icon/Type=Wi-Fi.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=147-1986&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "40ff3f8d525571dd1a7dbf23ad3a4259475fc0720e8d3cc8d96ba7a47fd9dfa8"
+  },
+  {
+    "name": "Icon/Amenity/Pets",
+    "file": "public/assets/figma/Icon/Amenity/Pets.svg",
+    "sourceFileName": "Icon/Type=Pets.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=147-1980&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "8f3ecebece16be71cb4929a854bfc64fc8bb697ebfffce07bf6c9a1fba5320b9"
+  },
+  {
+    "name": "Icon/Amenity/24/7",
+    "file": "public/assets/figma/Icon/Amenity/24/7.svg",
+    "sourceFileName": "Icon/Type=24/7.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=147-1974&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "70ca50d160da02ad660ef469e98479d0fa557924e80ae55b15a31fd6da8d05da"
+  },
+  {
+    "name": "Icon/Amenity/Ramp",
+    "file": "public/assets/figma/Icon/Amenity/Ramp.svg",
+    "sourceFileName": "Icon/Type=Ramp.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=147-1970&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "36056aa54fcb13e9c425af9221de62a044419388d5ba5b3ad8404f86a7fc028d"
+  },
+  {
+    "name": "Icon/Spot/Success",
+    "file": "public/assets/figma/Icon/Spot/Success.svg",
+    "sourceFileName": "Icon/Spot/Success.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=306-5972&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "4c23bdf8f33f3503158ca084c40dfa7529ec19b4b4bbc132a812292fa0e32940"
+  },
+  {
+    "name": "Icon/Spot/Outside area",
+    "file": "public/assets/figma/Icon/Spot/Outside area.svg",
+    "sourceFileName": "Icon/Spot/Outside area.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=284-6151&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "baa4f1c3be1aff3ea39d8c251f85ab04ee3a41ecfaaea81bcf807c5b9dbd9458"
+  },
+  {
+    "name": "Icon/Spot/Location unknown",
+    "file": "public/assets/figma/Icon/Spot/Location unknown.svg",
+    "sourceFileName": "Icon/Spot/Location unknown.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=284-6146&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "6065a168375cb8bf8be75409373a5678099d36de3c2e9aa4827c3597622418e2"
+  },
+  {
+    "name": "Icon/Spot/Location",
+    "file": "public/assets/figma/Icon/Spot/Location.svg",
+    "sourceFileName": "Icon/Spot/Location.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=284-6141&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "1d3f57d71ac822d5628444568644f321b3d03f643b5d22334498722ae54a3b67"
+  },
+  {
+    "name": "Icon/Spot/Location off",
+    "file": "public/assets/figma/Icon/Spot/Location off.svg",
+    "sourceFileName": "Icon/Spot/Location off.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=280-5848&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "ac525268a5be0a0c083a8dcd6b5c989286d7503da5b9bbb294cfdae83792ed69"
+  },
+  {
+    "name": "Icon/Spot/No results",
+    "file": "public/assets/figma/Icon/Spot/No results.svg",
+    "sourceFileName": "Icon/Spot/No results.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=280-5842&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "a99f7150e6e76c2366a3665191fcb2d9686d4523e1a76914e56d3b9daff96202"
+  },
+  {
+    "name": "Icon/Spot/Offline",
+    "file": "public/assets/figma/Icon/Spot/Offline.svg",
+    "sourceFileName": "Icon/Spot/Offline.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=280-5835&t=LvZX5p0FWgliwvNC-0",
+    "width": 48.0,
+    "height": 48.0,
+    "sha256": "45a80a962198a2fde0139ad68c632142e1965bd9617f430890588434e61a01e1"
+  },
+  {
+    "name": "Icon/Chevron right",
+    "file": "public/assets/figma/Icon/Chevron right.svg",
+    "sourceFileName": "Icon/Chevron right.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=32-1954&t=LvZX5p0FWgliwvNC-0",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "31336943cddc91b060d4b698ea01f5eabbdaac4496b9925fb5b611e122d1c73d"
+  },
+  {
+    "name": "Map pin/Parking, Default",
+    "file": "public/assets/figma/Map pin/Parking, Default.svg",
+    "sourceFileName": "Type=Parking, State=Default.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=126-5404&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "e1feaea46e11ba342a460274f241aaa077e05883999ec105e9322b7010378665"
+  },
+  {
+    "name": "Map pin/Parking, Selected",
+    "file": "public/assets/figma/Map pin/Parking, Selected.svg",
+    "sourceFileName": "Type=Parking, State=Selected.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=126-5406&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "f9bbae34613c33941b43e426fb16425ee22addae6e799a88bb077663cef7b619"
+  },
+  {
+    "name": "Map pin/Parking, Inactive",
+    "file": "public/assets/figma/Map pin/Parking, Inactive.svg",
+    "sourceFileName": "Type=Parking, State=Inactive.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=126-5410&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "97cbd7adbfa99d4ada274116a6562408132b101c6a999d49d83577204425b8d2"
+  },
+  {
+    "name": "Map pin/Metro, Default",
+    "file": "public/assets/figma/Map pin/Metro, Default.svg",
+    "sourceFileName": "Type=Metro, State=Default.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=17-1424&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "6df97b643cc5d05670b220e7cc10760818a5e9193542346f9fbba69d65636473"
+  },
+  {
+    "name": "Map pin/Metro, Selected",
+    "file": "public/assets/figma/Map pin/Metro, Selected.svg",
+    "sourceFileName": "Type=Metro, State=Selected.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=17-1441&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "ed70338f539e2bb62dabf43dce1540e58786fd700381046aad3596bcf5a945f8"
+  },
+  {
+    "name": "Map pin/Metro, Inactive",
+    "file": "public/assets/figma/Map pin/Metro, Inactive.svg",
+    "sourceFileName": "Type=Metro, State=Inactive.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=17-1444&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "55f595d4ff578b0240216adbe44dfc96a4bf465ae17ebec420b84c1613658a73"
+  },
+  {
+    "name": "Map pin/Basement and others, Default",
+    "file": "public/assets/figma/Map pin/Basement and others, Default.svg",
+    "sourceFileName": "Type=Basement and others, State=Default.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=17-1425&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "a5106a710a05b6c5018faec86a0ba18cc3b98aefee92ff01dc689a070cc542ff"
+  },
+  {
+    "name": "Map pin/Basement and others, Selected",
+    "file": "public/assets/figma/Map pin/Basement and others, Selected.svg",
+    "sourceFileName": "Type=Basement and others, State=Selected.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=17-1432&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "33a0f6535525bae501b9d89e086c6037b5a5686435696b8dcfea9c5bf519b3ed"
+  },
+  {
+    "name": "Map pin/Basement and others, Inactive",
+    "file": "public/assets/figma/Map pin/Basement and others, Inactive.svg",
+    "sourceFileName": "Type=Basement and others, State=Inactive.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=17-1436&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "f223f16f83967dc6397d92fe783166dc6fcd4aabe510a42e96b2788b15cf7fd1"
+  },
+  {
+    "name": "Button/Menu",
+    "file": "public/assets/figma/Button/Menu.svg",
+    "sourceFileName": "Button/Menu.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=138-852&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "f5a4f1153017a46ee96ee57457d93d5ee15cc4cf84063bdbdd0131c54b42abe8"
+  },
+  {
+    "name": "Button/Filters/Adjust filters",
+    "file": "public/assets/figma/Button/Filters/Adjust filters.svg",
+    "sourceFileName": "Button/Adjust filters.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=153-2101&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "6f251017facb28a8f55339157719e6577c9f1324014129c318a76fb95ce9d15a"
+  },
+  {
+    "name": "Sheet/Shelter details/Close",
+    "file": "public/assets/figma/Sheet/Shelter details/Close.svg",
+    "sourceFileName": "Sheet/Close.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-2988&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "447d44108d4171f44bd9eca4ea24add03f3066733ca80030070e47571cc62f7e"
+  },
+  {
+    "name": "Utility/Search",
+    "file": "public/assets/figma/Utility/Search.svg",
+    "sourceFileName": "Search icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=169-2516&t=LvZX5p0FWgliwvNC-0",
+    "width": 18.0,
+    "height": 18.0,
+    "sha256": "ad78f4bd553d831fa799996c484831c2351e95b6c5293843ab6a92804efe6b9a"
+  },
+  {
+    "name": "Utility/Check",
+    "file": "public/assets/figma/Utility/Check.svg",
+    "sourceFileName": "Check.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=162-2453&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 11.0,
+    "sha256": "fa6e5af0a621d149e32e2a55e5201b7e341534e18989cfd6390c2da1fe56f9bd"
+  },
+  {
+    "name": "Facility/Ramp",
+    "file": "public/assets/figma/Facility/Ramp.svg",
+    "sourceFileName": "Sheet/Facility icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-3021&t=LvZX5p0FWgliwvNC-0",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "9db12bb0b59b317c671649ee282f3110b7531f44d4ac5b70092ad4df6f9003ae"
+  },
+  {
+    "name": "Facility/Pets",
+    "file": "public/assets/figma/Facility/Pets.svg",
+    "sourceFileName": "Sheet/Facility icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-3026&t=LvZX5p0FWgliwvNC-0",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "d2593893b6cdba79ff562d12de60e8ff73ca6c9fcc4403d99a8fd15755484c0d"
+  },
+  {
+    "name": "Facility/Wi-Fi",
+    "file": "public/assets/figma/Facility/Wi-Fi.svg",
+    "sourceFileName": "Sheet/Facility icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-3031&t=LvZX5p0FWgliwvNC-0",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "eaf38748027560d238d6db2208c9738a883f100aadcaa69f998b81668e9f60d4"
+  },
+  {
+    "name": "Facility/Power",
+    "file": "public/assets/figma/Facility/Power.svg",
+    "sourceFileName": "Sheet/Facility icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-3036&t=LvZX5p0FWgliwvNC-0",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "5b6079fc1faf3e615ab1d3f0b861b7c9d62f8a5848802e08f4cc0e2aa98311b0"
+  },
+  {
+    "name": "Facility/WC",
+    "file": "public/assets/figma/Facility/WC.svg",
+    "sourceFileName": "Sheet/Facility icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-3041&t=LvZX5p0FWgliwvNC-0",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "e2c9704cec3cfe8e8b7d5c8d15f621bb0977c5d73be689759c0b6c1fad9637a4"
+  },
+  {
+    "name": "Utility/Spinner",
+    "file": "public/assets/figma/Utility/Spinner.svg",
+    "sourceFileName": "Sheet/Spinner.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=226-5371&t=LvZX5p0FWgliwvNC-0",
+    "width": 18.0,
+    "height": 18.0,
+    "sha256": "ce2fb4374e96f8e27d9d94de392a80c60e37f58a8e0bcf2cf13dc379813cceef"
+  },
+  {
+    "name": "Utility/Clock small",
+    "file": "public/assets/figma/Utility/Clock small.svg",
+    "sourceFileName": "Sheet/clock.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=144-2141&t=LvZX5p0FWgliwvNC-0",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "bb60f9f2f2ab00fd2975a973edc5dc663bc9f74ede376b3ee425878eda06a118"
+  },
+  {
+    "name": "Utility/Recenter",
+    "file": "public/assets/figma/Utility/Recenter.svg",
+    "sourceFileName": "Recenter on your location.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=62-661&t=LvZX5p0FWgliwvNC-0",
+    "width": 44.0,
+    "height": 44.0,
+    "sha256": "dbce74e24a87cfa9addaf2b73a79815262e4f7f27596406471bb79000c3b489a"
+  },
+  {
+    "name": "Sheet/Shelter details/Copy icon",
+    "file": "public/assets/figma/Sheet/Shelter details/Copy icon.svg",
+    "sourceFileName": "Sheet/Copy icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-2993",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "7f41649ad5d902af3e2096aca282e3e0698c5205469ce0ee63cf1491c0a6429a"
+  },
+  {
+    "name": "Sheet/Shelter details/Share icon",
+    "file": "public/assets/figma/Sheet/Shelter details/Share icon.svg",
+    "sourceFileName": "Sheet/Share icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=174-2998",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "40cbd8f693971e567b6c549a04da40f8cbff01c729b8f36cda997e6de48302d6"
+  },
+  {
+    "name": "Sheet/Shelter details/Walk icon",
+    "file": "public/assets/figma/Sheet/Shelter details/Walk icon.svg",
+    "sourceFileName": "Sheet/icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=181-3004",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "cf5417b25e054aa2ac375a075513b382cad371aec64894fa447bd72ba9ff3128"
+  },
+  {
+    "name": "Sheet/Shelter details/Capacity icon",
+    "file": "public/assets/figma/Sheet/Shelter details/Capacity icon.svg",
+    "sourceFileName": "Sheet/icon.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=181-3011",
+    "width": 14.0,
+    "height": 14.0,
+    "sha256": "5bf6c76824da01a75dfa80ea42b343e046b94fa1fd0f8aa339c990ac367959a1"
+  },
+  {
+    "name": "Utility/Clock",
+    "file": "public/assets/figma/Utility/Clock.svg",
+    "sourceFileName": "Sheet/Facility option/24/clock.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=155-2337",
+    "width": 24.0,
+    "height": 24.0,
+    "sha256": "a9c815032a3b495d36374a70ae11d1bc97fbda196ede5afae17680cc750198db"
+  },
+  {
+    "name": "Icon/State/Pin",
+    "file": "public/assets/figma/Icon/State/Pin.svg",
+    "sourceFileName": "Icon/State/Pin.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=171-2664&t=LvZX5p0FWgliwvNC-0",
+    "width": 32.0,
+    "height": 32.0,
+    "sha256": "77f64a8ae519606c1ee7f4b5591327fb492c267ecbe712f54ee1c51e5d0e1cca"
+  },
+  {
+    "name": "Search suggestion/Original set",
+    "file": "public/assets/figma/Search suggestion/Original set.svg",
+    "sourceFileName": "List item/Search suggestion.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=169-2662&t=LvZX5p0FWgliwvNC-0",
+    "width": 1234.0,
+    "height": 168.0,
+    "sha256": "22f425559820f5a958c6808cede16accd8a6e05b317ee150cea44c548246be47"
+  },
+  {
+    "name": "Search suggestion/Location",
+    "file": "public/assets/figma/Search suggestion/Location.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=169-2662&t=LvZX5p0FWgliwvNC-0",
+    "derivedFrom": "Search suggestion/Original set",
+    "transformation": "Crop viewBox to 40 62 44 44; all original paths, colors and strokes unchanged.",
+    "width": 44,
+    "height": 44,
+    "sha256": "7b1db0d81e0a864b9ac590f9e0bbe57da09b1da76f0a6b962fcdb0f44baaca07"
+  },
+  {
+    "name": "Search suggestion/Metro",
+    "file": "public/assets/figma/Search suggestion/Metro.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=169-2662&t=LvZX5p0FWgliwvNC-0",
+    "derivedFrom": "Search suggestion/Original set",
+    "transformation": "Crop viewBox to 438 62 44 44; all original paths, colors and strokes unchanged.",
+    "width": 44,
+    "height": 44,
+    "sha256": "a783e4d1b73ac9f8278338d5e932075c8d90fba6d8417168544ae1451334029d"
+  },
+  {
+    "name": "Search suggestion/Address",
+    "file": "public/assets/figma/Search suggestion/Address.svg",
+    "sourceUrl": "https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=169-2662&t=LvZX5p0FWgliwvNC-0",
+    "derivedFrom": "Search suggestion/Original set",
+    "transformation": "Crop viewBox to 836 62 44 44; all original paths, colors and strokes unchanged.",
+    "width": 44,
+    "height": 44,
+    "sha256": "96d1742999097589f61c72f7cd79c2f29ff362762322562f56e6b91af6f6abd2"
+  }
+]

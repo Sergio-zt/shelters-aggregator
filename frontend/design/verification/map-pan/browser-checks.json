@@ -1,0 +1,26 @@
+[
+  {
+    "case": "repeated diagonal drag",
+    "covered": true,
+    "transform": "transform: translate(0px, -214px);"
+  },
+  {
+    "case": "scroll shelter list",
+    "listScrollTop": 844,
+    "transform": "transform: translate(0px, -214px);"
+  },
+  {
+    "case": "nearby pan",
+    "transform": "transform: translate(-10px, -94px);"
+  },
+  {
+    "case": "pin selection after panning",
+    "picked": true,
+    "selected": "true"
+  },
+  {
+    "case": "resize after pan",
+    "covered": true,
+    "transform": "transform: translate(-10px, -79.7493px);"
+  }
+]

@@ -1,0 +1,97 @@
+[
+  {
+    "case": "initial live map",
+    "canvas": true,
+    "center": "30.376800,50.453750",
+    "clusters": [
+      2,
+      2,
+      4
+    ],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 0,
+    "width": 390,
+    "zoom": "12.780"
+  },
+  {
+    "case": "list scroll keeps camera",
+    "canvas": true,
+    "center": "30.376800,50.453750",
+    "clusters": [
+      2,
+      2,
+      4
+    ],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 0,
+    "width": 390,
+    "zoom": "12.780"
+  },
+  {
+    "case": "pan loads geographic area",
+    "canvas": true,
+    "center": "30.413824,50.440278",
+    "clusters": [
+      2,
+      2,
+      4
+    ],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 0,
+    "width": 390,
+    "zoom": "12.780"
+  },
+  {
+    "case": "search visible area",
+    "canvas": true,
+    "center": "30.413824,50.440278",
+    "clusters": [],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 0,
+    "width": 390,
+    "zoom": "12.780",
+    "cards": 0
+  },
+  {
+    "case": "selected marker and demo user position",
+    "canvas": true,
+    "center": "30.365700,50.455100",
+    "clusters": [],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 6,
+    "width": 390,
+    "zoom": "15.000"
+  },
+  {
+    "case": "marker opens shelter details",
+    "visible": true
+  },
+  {
+    "case": "combined filters",
+    "canvas": true,
+    "center": "30.363500,50.454200",
+    "clusters": [],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 1,
+    "width": 390,
+    "zoom": "14.000",
+    "cards": 1
+  },
+  {
+    "case": "recenter on demo location",
+    "canvas": true,
+    "center": "30.370500,50.453800",
+    "clusters": [],
+    "oldSvg": false,
+    "overflow": false,
+    "pins": 0,
+    "width": 390,
+    "zoom": "15.000"
+  }
+]

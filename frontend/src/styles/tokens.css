@@ -1,0 +1,166 @@
+/* Figma: UI → Styles · v2. Slash-separated names map to CSS custom properties:
+   Primary/500 → --Primary-500; Body/M Regular → .Body-M-Regular. */
+@font-face {
+  font-family: Geologica;
+  src: url('/fonts/geologica-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Geologica;
+  src: url('/fonts/geologica-500.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Geologica;
+  src: url('/fonts/geologica-600.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: Geologica;
+  src: url('/fonts/geologica-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+:root {
+  --Primary-50: #ebf2fe;
+  --Primary-100: #d6e4fd;
+  --Primary-200: #adc9fb;
+  --Primary-300: #85aff8;
+  --Primary-400: #4d8cf5;
+  --Primary-500: #1a6bf0;
+  --Primary-600: #0a5fd0;
+  --Primary-700: #0047b3;
+  --Primary-800: #003a8c;
+  --Primary-900: #002b66;
+  --Primary-On-primary: #ffffff;
+  --Accent-50: #fffbeb;
+  --Accent-100: #fff7d9;
+  --Accent-200: #fceba8;
+  --Accent-300: #f2db80;
+  --Accent-400: #e5cc66;
+  --Accent-500: #d4b23c;
+  --Accent-600: #a88a1e;
+  --Accent-700: #7a6414;
+  --Gray-0: #ffffff;
+  --Gray-50: #f8f8f7;
+  --Gray-100: #f2f2f0;
+  --Gray-200: #eaeae7;
+  --Gray-300: #dadad6;
+  --Gray-400: #cdcdc8;
+  --Gray-500: #a3a39e;
+  --Gray-600: #858580;
+  --Gray-700: #6b6b67;
+  --Gray-800: #4a4a47;
+  --Gray-900: #2e2e2c;
+  --Gray-950: #171717;
+  --System-Success-Fill: #ddf7e3;
+  --System-Success-Border: #8fd9a3;
+  --System-Success-Icon: #06b02c;
+  --System-Success-Text: #00741a;
+  --System-Warning-Fill: #ffebcc;
+  --System-Warning-Border: #f5c27a;
+  --System-Warning-Icon: #d97300;
+  --System-Warning-Text: #8c4d00;
+  --System-Error-Fill: #fde4e2;
+  --System-Error-Border: #f4a19a;
+  --System-Error-Icon: #e0362b;
+  --System-Error-Text: #b42318;
+  --System-Info-Fill: #ebf2fe;
+  --System-Info-Border: #adc9fb;
+  --System-Info-Icon: #1a6bf0;
+  --System-Info-Text: #0a5fd0;
+  --Map-Base: #f6f5f2;
+  --Map-Park: #e6eedc;
+  --Map-Road: #ffffff;
+  --Map-Building: #eaeae7;
+  --Map-Water: #d6e6f2;
+  --Map-Pin-default: #171717;
+  --Map-Pin-selected: #1a6bf0;
+  --Map-My-location: #2f80ed;
+  --Overlay-Scrim: rgb(0 0 0 / 40%);
+  --Elevation-Sheet: 0 -4px 24px rgb(0 0 0 / 10%);
+  --Elevation-Control: 0 2px 8px rgb(0 0 0 / 12%);
+  --blue: var(--Primary-500);
+  /* App motion tokens supplement the static Figma styles. */
+  --Motion-Control-duration: 120ms;
+  --Motion-Fade-duration: 240ms;
+  --Motion-Panel-duration: 440ms;
+  --Motion-Exit-duration: 360ms;
+  --Motion-Ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.Display-Large {
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: 700;
+}
+.Heading-H1 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+}
+.Heading-H2 {
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
+.Heading-H3 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+.Heading-H4 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.Body-L-Regular,
+.Body-L-Medium {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+.Body-L-Medium {
+  font-weight: 500;
+}
+.Body-M-Regular,
+.Body-M-Medium {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+.Body-M-Medium {
+  font-weight: 500;
+}
+.Body-S-Regular {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.Caption-Regular,
+.Caption-Medium {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.Caption-Medium {
+  font-weight: 500;
+}
+.Label-Badge {
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+}
+.Button-Large {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+.Button-Small {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
