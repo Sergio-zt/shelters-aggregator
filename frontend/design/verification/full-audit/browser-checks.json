@@ -1,0 +1,1046 @@
+[
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "initial",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "nearby",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "picked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "details",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "feedback-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "filters",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "menu",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "about",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "add",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "site-feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "location",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "denied",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "outside",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "location-unavailable",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "location-steps",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "location-blocked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "sent",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "results",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "search",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "search-empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "map-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "details-loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "details-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "initial",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "nearby",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "picked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "details",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "feedback-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "filters",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "menu",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "about",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "add",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "site-feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "location",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "denied",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "outside",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "location-unavailable",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "location-steps",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "location-blocked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "sent",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "results",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "search",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "search-empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "map-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "details-loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "details-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "initial",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "nearby",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "picked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "details",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "feedback-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "filters",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "menu",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "about",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "add",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "site-feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "location",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "denied",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "outside",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "location-unavailable",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "location-steps",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "location-blocked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "sent",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "results",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "search",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "search-empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "map-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "details-loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "details-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "initial",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "nearby",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "picked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "details",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "feedback-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "filters",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "menu",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "about",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "add",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "site-feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "location",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "denied",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "outside",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "location-unavailable",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "location-steps",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "location-blocked",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "sent",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "results",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "search",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "search-empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "map-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "details-loading",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "details-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "empty",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "details",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "filters",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "menu",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "add",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "feedback-error",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "location-steps",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "about",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 568,
+    "screen": "site-feedback",
+    "brokenImages": 0,
+    "dialogOverflow": false,
+    "footerOutside": false,
+    "pageOverflow": false
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-02",
+  "lighthouseVersion": "12.8.2",
+  "mobile": {
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 1353.3415,
+        "display": "1.4\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 2556.683,
+        "display": "2.6\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0.0012843218725847,
+        "display": "0.001"
+      },
+      "speed-index": {
+        "value": 1353.3415,
+        "display": "1.4\u00a0s"
+      }
+    }
+  },
+  "desktop": {
+    "scores": {
+      "performance": 100,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "metrics": {
+      "first-contentful-paint": {
+        "value": 322.5202,
+        "display": "0.3\u00a0s"
+      },
+      "largest-contentful-paint": {
+        "value": 565.0404,
+        "display": "0.6\u00a0s"
+      },
+      "total-blocking-time": {
+        "value": 0,
+        "display": "0\u00a0ms"
+      },
+      "cumulative-layout-shift": {
+        "value": 0,
+        "display": "0"
+      },
+      "speed-index": {
+        "value": 322.5202,
+        "display": "0.3\u00a0s"
+      }
+    }
+  },
+  "screenAccessibility": {
+    "add": {
+      "accessibility": 100,
+      "best-practices": 100
+    },
+    "details": {
+      "accessibility": 100,
+      "best-practices": 100
+    },
+    "feedback-error": {
+      "accessibility": 100,
+      "best-practices": 100
+    },
+    "filters": {
+      "accessibility": 100,
+      "best-practices": 100
+    },
+    "location": {
+      "accessibility": 100,
+      "best-practices": 100
+    },
+    "menu": {
+      "accessibility": 100,
+      "best-practices": 100
+    },
+    "search": {
+      "accessibility": 100,
+      "best-practices": 100
+    }
+  },
+  "responsive": {
+    "combinations": 116,
+    "failures": 0
+  }
+}

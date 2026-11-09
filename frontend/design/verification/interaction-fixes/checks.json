@@ -1,0 +1,290 @@
+[
+  {
+    "case": "menu appearance keeps underlying layout",
+    "before": {
+      "baseScroll": 0,
+      "headerY": 0,
+      "listTop": 433,
+      "shellScroll": 0
+    },
+    "frames": [
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "0.996449",
+        "transform": "matrix(1, 0, 0, 1, 0, 73.4025)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 48.3234)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 11.6193)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "listVisible": "visible",
+        "scrim": "1",
+        "transform": "matrix(1, 0, 0, 1, 0, 0)"
+      }
+    ]
+  },
+  {
+    "case": "menu exit keeps layout",
+    "frames": [
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "panelPresent": true,
+        "scrim": "0.446852",
+        "transform": "matrix(1, 0, 0, 1, 0, 229.003)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "panelPresent": true,
+        "scrim": "0.25245",
+        "transform": "matrix(1, 0, 0, 1, 0, 309.486)"
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "panelPresent": false,
+        "scrim": null,
+        "transform": null
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "panelPresent": false,
+        "scrim": null,
+        "transform": null
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "panelPresent": false,
+        "scrim": null,
+        "transform": null
+      },
+      {
+        "baseScroll": 0,
+        "center": "30.376800,50.453750",
+        "headerY": 0,
+        "listTop": 433,
+        "shellScroll": 0,
+        "zoom": "12.780",
+        "panelPresent": false,
+        "scrim": null,
+        "transform": null
+      }
+    ]
+  },
+  {
+    "case": "filters appear and exit via handle",
+    "before": {
+      "baseScroll": 0,
+      "center": "30.376800,50.453750",
+      "headerY": 0,
+      "listTop": 433,
+      "shellScroll": 0,
+      "zoom": "12.780"
+    },
+    "open": {
+      "baseScroll": 0,
+      "center": "30.376800,50.453750",
+      "headerY": 0,
+      "listTop": 433,
+      "shellScroll": 0,
+      "zoom": "12.780"
+    },
+    "after": {
+      "baseScroll": 0,
+      "center": "30.376800,50.453750",
+      "headerY": 0,
+      "listTop": 433,
+      "shellScroll": 0,
+      "zoom": "12.780"
+    }
+  },
+  {
+    "case": "search keeps map mounted",
+    "canvas": 1,
+    "cancelVisible": true
+  },
+  {
+    "case": "blank search area cancels",
+    "searchPanels": 0,
+    "query": "",
+    "before": {
+      "baseScroll": 0,
+      "center": "30.376800,50.453750",
+      "headerY": 0,
+      "listTop": 433,
+      "shellScroll": 0,
+      "zoom": "12.780"
+    },
+    "after": {
+      "baseScroll": 0,
+      "center": "30.376800,50.453750",
+      "headerY": 0,
+      "listTop": 433,
+      "shellScroll": 0,
+      "zoom": "12.780"
+    }
+  },
+  {
+    "case": "Escape outside input cancels",
+    "searchPanels": 0
+  },
+  {
+    "case": "header cancels search",
+    "searchPanels": 0
+  },
+  {
+    "case": "Cancel restores committed search",
+    "center": "30.365700,50.455100",
+    "query": "Zhytomyrska, Kyiv",
+    "searchPanels": 0
+  },
+  {
+    "case": "click empty white area cancels search",
+    "searchPanels": 0
+  },
+  {
+    "case": "empty state has two positions only",
+    "initial": {
+      "baseScroll": 0,
+      "center": "30.375000,50.454700",
+      "headerY": 0,
+      "listTop": 364,
+      "shellScroll": 0,
+      "zoom": "13.300"
+    },
+    "states": [
+      {
+        "center": "30.375000,50.454700",
+        "expanded": "false",
+        "label": "Show shelter panel",
+        "shellScroll": 0,
+        "thirdState": false
+      },
+      {
+        "center": "30.375000,50.454700",
+        "expanded": "true",
+        "label": "Hide shelter panel",
+        "shellScroll": 0,
+        "thirdState": false
+      },
+      {
+        "center": "30.375000,50.454700",
+        "expanded": "false",
+        "label": "Show shelter panel",
+        "shellScroll": 0,
+        "thirdState": false
+      },
+      {
+        "center": "30.375000,50.454700",
+        "expanded": "true",
+        "label": "Hide shelter panel",
+        "shellScroll": 0,
+        "thirdState": false
+      }
+    ]
+  },
+  {
+    "case": "drag state up does not fully expand",
+    "label": "Hide shelter panel",
+    "mode": "state",
+    "thirdState": false
+  }
+]

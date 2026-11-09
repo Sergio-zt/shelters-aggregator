@@ -1,0 +1,338 @@
+[
+  {
+    "width": 320,
+    "screen": "initial",
+    "heading": "Shelters in this area",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 320,
+    "screen": "nearby",
+    "heading": "Nearby shelters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 320,
+    "screen": "details",
+    "heading": "Zhytomyrska metro station",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 320,
+    "screen": "filters",
+    "heading": "Filters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 320,
+    "screen": "add",
+    "heading": "Add a shelter",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 320,
+    "screen": "menu",
+    "heading": "Menu",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 320,
+    "screen": "feedback",
+    "heading": "Give feedback",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "initial",
+    "heading": "Shelters in this area",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "nearby",
+    "heading": "Nearby shelters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "picked",
+    "heading": null,
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "search",
+    "heading": null,
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "search-empty",
+    "heading": null,
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "results",
+    "heading": "Shelters in this area",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "filters",
+    "heading": "Filters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "empty",
+    "heading": null,
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "details",
+    "heading": "Zhytomyrska metro station",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "details-loading",
+    "heading": "Zhytomyrska metro station",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "details-error",
+    "heading": "Zhytomyrska metro station",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "feedback",
+    "heading": "Give feedback",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "feedback-error",
+    "heading": "Give feedback",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "menu",
+    "heading": "Menu",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "about",
+    "heading": "About & help",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "add",
+    "heading": "Add a shelter",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "site-feedback",
+    "heading": "Send feedback",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "sent",
+    "heading": "Sent",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "location",
+    "heading": "Find shelters near you",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "denied",
+    "heading": "Location is turned off",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "location-blocked",
+    "heading": "Location is still blocked",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "location-steps",
+    "heading": "Turn on location",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "location-unavailable",
+    "heading": "Couldn’t find your location",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "outside",
+    "heading": "You’re outside Kyiv",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "loading",
+    "heading": null,
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "error",
+    "heading": null,
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 390,
+    "screen": "map-error",
+    "heading": "Nearby shelters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "initial",
+    "heading": "Shelters in this area",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "nearby",
+    "heading": "Nearby shelters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "details",
+    "heading": "Zhytomyrska metro station",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "filters",
+    "heading": "Filters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "add",
+    "heading": "Add a shelter",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "menu",
+    "heading": "Menu",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 480,
+    "screen": "feedback",
+    "heading": "Give feedback",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "initial",
+    "heading": "Shelters in this area",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "nearby",
+    "heading": "Nearby shelters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "details",
+    "heading": "Zhytomyrska metro station",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "filters",
+    "heading": "Filters",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "add",
+    "heading": "Add a shelter",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "menu",
+    "heading": "Menu",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  },
+  {
+    "width": 1440,
+    "screen": "feedback",
+    "heading": "Give feedback",
+    "pageOverflow": false,
+    "sheetOverflow": false
+  }
+]

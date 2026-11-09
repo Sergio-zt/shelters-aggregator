@@ -1,0 +1,107 @@
+{
+  "feedbackQA": [
+    {
+      "scenario": "shelter-empty",
+      "enabled": false
+    },
+    {
+      "scenario": "whitespace-only",
+      "enabled": false
+    },
+    {
+      "scenario": "comment-ready",
+      "enabled": true
+    },
+    {
+      "buttonText": "Sending…",
+      "fieldDisabled": true,
+      "legacyControls": 0,
+      "scenario": "sending"
+    },
+    {
+      "listVisible": true,
+      "panels": 0,
+      "picked": false,
+      "scenario": "sent-back-to-map"
+    },
+    {
+      "button": "Try again",
+      "comment": "Wi-Fi does not work here.",
+      "error": "Couldn’t send. Check your connection and try again.",
+      "scenario": "failed-comment-kept"
+    },
+    {
+      "context": false,
+      "heading": "Give feedback",
+      "scenario": "menu-without-context",
+      "textareaCount": 1
+    },
+    {
+      "disabled": true,
+      "empty": true,
+      "hasShelterContext": false,
+      "scenario": "real-menu-empty"
+    },
+    {
+      "comment": "",
+      "context": false,
+      "scenario": "topbar-with-existing-selection"
+    },
+    {
+      "comment": "",
+      "context": "Sviatoshyn metro station · Beresteiskyi Ave, 144",
+      "scenario": "details-feedback-context"
+    },
+    {
+      "button": "Try again",
+      "comment": "The opening hours need updating.",
+      "scenario": "edited-failed-comment"
+    },
+    {
+      "scenario": "retry-success",
+      "success": true
+    }
+  ],
+  "feedbackLayouts": [
+    {
+      "actionsBottom": 740,
+      "comment": "Wi-Fi does not work here.",
+      "overflow": false,
+      "panelRole": "dialog",
+      "textareaHeight": 72,
+      "width": 320
+    },
+    {
+      "actionsBottom": 844,
+      "comment": "Wi-Fi does not work here.",
+      "overflow": false,
+      "panelRole": "dialog",
+      "textareaHeight": 72,
+      "width": 390
+    },
+    {
+      "actionsBottom": 900,
+      "comment": "Wi-Fi does not work here.",
+      "overflow": false,
+      "panelRole": "region",
+      "textareaHeight": 72,
+      "width": 768
+    },
+    {
+      "actionsBottom": 600,
+      "comment": "Wi-Fi does not work here.",
+      "overflow": false,
+      "panelRole": "region",
+      "textareaHeight": 72,
+      "width": 1024
+    },
+    {
+      "actionsBottom": 900,
+      "comment": "Wi-Fi does not work here.",
+      "overflow": false,
+      "panelRole": "region",
+      "textareaHeight": 72,
+      "width": 1440
+    }
+  ]
+}

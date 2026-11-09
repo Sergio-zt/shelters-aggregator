@@ -1,0 +1,29 @@
+[
+  {
+    "cards": 8,
+    "picked": false,
+    "scenario": "desktop-details-underlay"
+  },
+  {
+    "activeClass": "shelter-card",
+    "activeText": "Sviatoshyn metro stationMetro · SviatoshynskyiOpen during al",
+    "scenario": "desktop-focus-return",
+    "scroll": 0
+  },
+  {
+    "activeClass": "shelter-card",
+    "activeText": "Sviatoshyn metro stationMetro · SviatoshynskyiOpen during al",
+    "scenario": "mobile-focus-return",
+    "scroll": 0
+  },
+  {
+    "className": "",
+    "scenario": "initial-focus",
+    "tag": "BODY"
+  },
+  {
+    "activeClass": "shelter-card",
+    "scenario": "hidden-mobile-trigger-after-resize",
+    "visible": true
+  }
+]

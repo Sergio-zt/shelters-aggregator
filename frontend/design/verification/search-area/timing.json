@@ -1,0 +1,25 @@
+[
+  {
+    "ms": 0,
+    "opacity": "0",
+    "visible": "false"
+  },
+  {
+    "ms": 5439,
+    "opacity": "0.655702",
+    "visible": "true"
+  },
+  {
+    "scenario": "second drag",
+    "ms": 0,
+    "disabled": true,
+    "opacity": "0.538884",
+    "visible": "false"
+  },
+  {
+    "scenario": "second drag wait",
+    "ms": 6444,
+    "opacity": "1",
+    "visible": "true"
+  }
+]

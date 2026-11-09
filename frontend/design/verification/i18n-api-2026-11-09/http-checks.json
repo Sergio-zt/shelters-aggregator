@@ -1,0 +1,19 @@
+[
+  {
+    "cards": [
+      "HTTP API pointMetro · Test district24/7 accessWi-FiCapacity: 123"
+    ],
+    "center": "30.510000,50.480000",
+    "lang": "en",
+    "markerLabels": [
+      "Select HTTP API point"
+    ],
+    "scenario": "real-http-coordinates",
+    "warning": "Records with invalid IDs or coordinates are not shown: 1."
+  },
+  {
+    "card": "Точка з HTTP APIМетро · Тестовий районЦілодобовий доступWi-FiМісткість: 123",
+    "lang": "uk",
+    "scenario": "real-http-preference-reload"
+  }
+]

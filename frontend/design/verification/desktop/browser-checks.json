@@ -1,0 +1,320 @@
+[
+  {
+    "dialog": {
+      "bottom": 557,
+      "height": 214,
+      "left": 540,
+      "right": 900,
+      "top": 343,
+      "width": 360,
+      "x": 540,
+      "y": 343
+    },
+    "scenario": "discard-navigation"
+  },
+  {
+    "draft": "Desktop draft",
+    "scenario": "keep-draft"
+  },
+  {
+    "active": "maplibregl-canvas",
+    "scenario": "panel-tab-to-map"
+  },
+  {
+    "active": "Search a wider area",
+    "scenario": "map-tab-back"
+  },
+  {
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:loading"
+  },
+  {
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:error"
+  },
+  {
+    "bodyHeight": 452,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:location"
+  },
+  {
+    "bodyHeight": 452,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:denied"
+  },
+  {
+    "bodyHeight": 452,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:outside"
+  },
+  {
+    "actionsBottom": 600,
+    "bodyHeight": 283,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:location-steps"
+  },
+  {
+    "bodyHeight": 424,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:details-loading"
+  },
+  {
+    "bodyHeight": 424,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:details-error"
+  },
+  {
+    "actionsBottom": 600,
+    "bodyHeight": 343,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:sent"
+  },
+  {
+    "actionsBottom": 600,
+    "bodyHeight": 343,
+    "overflow": false,
+    "panelWidth": 390,
+    "scenario": "state:site-feedback"
+  },
+  {
+    "backgroundInert": true,
+    "draft": "Responsive draft",
+    "role": "dialog",
+    "scenario": "draft-desktop-to-mobile"
+  },
+  {
+    "backgroundInert": false,
+    "draft": "Responsive draft",
+    "role": "region",
+    "scenario": "draft-mobile-to-desktop"
+  },
+  {
+    "checked": [
+      {
+        "checked": false,
+        "label": "Wheelchair ramp · 2"
+      },
+      {
+        "checked": true,
+        "label": "24/7 access · 4"
+      },
+      {
+        "checked": false,
+        "label": "Pets allowed · 4"
+      },
+      {
+        "checked": false,
+        "label": "Wi-Fi · 3"
+      },
+      {
+        "checked": false,
+        "label": "Electricity · 3"
+      },
+      {
+        "checked": false,
+        "label": "Toilet (WC)"
+      }
+    ],
+    "scenario": "filter-draft-resize"
+  },
+  {
+    "expanded": "false",
+    "label": "Show shelter panel",
+    "scenario": "mobile-empty-collapsed"
+  },
+  {
+    "expanded": "true",
+    "scenario": "mobile-empty-shown"
+  },
+  {
+    "dragHandle": "block",
+    "map": {
+      "bottom": 900,
+      "height": 742,
+      "left": 0,
+      "right": 390,
+      "top": 158,
+      "width": 390,
+      "x": 0,
+      "y": 158
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 412.734375,
+      "left": 0,
+      "right": 390,
+      "top": 487.265625,
+      "width": 390,
+      "x": 0,
+      "y": 487.265625
+    },
+    "scenario": "final-breakpoint",
+    "width": 390
+  },
+  {
+    "dragHandle": "block",
+    "map": {
+      "bottom": 900,
+      "height": 742,
+      "left": 0,
+      "right": 767,
+      "top": 158,
+      "width": 767,
+      "x": 0,
+      "y": 158
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 412.9609375,
+      "left": 0,
+      "right": 767,
+      "top": 487.0390625,
+      "width": 767,
+      "x": 0,
+      "y": 487.0390625
+    },
+    "scenario": "final-breakpoint",
+    "width": 767
+  },
+  {
+    "dragHandle": "none",
+    "map": {
+      "bottom": 900,
+      "height": 836,
+      "left": 360,
+      "right": 768,
+      "top": 64,
+      "width": 408,
+      "x": 360,
+      "y": 64
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 752,
+      "left": 0,
+      "right": 360,
+      "top": 148,
+      "width": 360,
+      "x": 0,
+      "y": 148
+    },
+    "scenario": "final-breakpoint",
+    "width": 768
+  },
+  {
+    "dragHandle": "none",
+    "map": {
+      "bottom": 900,
+      "height": 836,
+      "left": 360,
+      "right": 1023,
+      "top": 64,
+      "width": 663,
+      "x": 360,
+      "y": 64
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 752,
+      "left": 0,
+      "right": 360,
+      "top": 148,
+      "width": 360,
+      "x": 0,
+      "y": 148
+    },
+    "scenario": "final-breakpoint",
+    "width": 1023
+  },
+  {
+    "dragHandle": "none",
+    "map": {
+      "bottom": 900,
+      "height": 836,
+      "left": 390,
+      "right": 1024,
+      "top": 64,
+      "width": 634,
+      "x": 390,
+      "y": 64
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 752,
+      "left": 0,
+      "right": 390,
+      "top": 148,
+      "width": 390,
+      "x": 0,
+      "y": 148
+    },
+    "scenario": "final-breakpoint",
+    "width": 1024
+  },
+  {
+    "dragHandle": "none",
+    "map": {
+      "bottom": 900,
+      "height": 836,
+      "left": 390,
+      "right": 1440,
+      "top": 64,
+      "width": 1050,
+      "x": 390,
+      "y": 64
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 752,
+      "left": 0,
+      "right": 390,
+      "top": 148,
+      "width": 390,
+      "x": 0,
+      "y": 148
+    },
+    "scenario": "final-breakpoint",
+    "width": 1440
+  },
+  {
+    "dragHandle": "none",
+    "map": {
+      "bottom": 900,
+      "height": 836,
+      "left": 390,
+      "right": 1920,
+      "top": 64,
+      "width": 1530,
+      "x": 390,
+      "y": 64
+    },
+    "overflow": false,
+    "panel": {
+      "bottom": 900,
+      "height": 752,
+      "left": 0,
+      "right": 390,
+      "top": 148,
+      "width": 390,
+      "x": 0,
+      "y": 148
+    },
+    "scenario": "final-breakpoint",
+    "width": 1920
+  }
+]

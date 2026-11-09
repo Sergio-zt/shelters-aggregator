@@ -1,0 +1,292 @@
+/* Figma: Desktop · MVP (1440) → Handoff · Responsive layout. */
+.desktop-topbar {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .workspace {
+    padding: 0;
+  }
+  .app-shell {
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .desktop-prototype {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --Layout-Panel-width: 360px;
+    --Layout-Top-bar-height: 64px;
+    --Layout-Search-height: 84px;
+    --Layout-Panel-top: calc(
+      var(--Layout-Top-bar-height) + var(--Layout-Search-height)
+    );
+  }
+  .workspace {
+    padding: 0;
+  }
+  .app-shell {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .desktop-prototype,
+  .header-top {
+    display: none;
+  }
+  .app-header {
+    height: var(--Layout-Top-bar-height);
+    padding: 0;
+  }
+  .desktop-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--Gray-200);
+  }
+  .brand,
+  .desktop-topbar nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand {
+    flex-shrink: 0;
+    min-height: 44px;
+    border-radius: 8px;
+  }
+  .brand-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--Primary-500);
+  }
+  .brand-caption {
+    color: var(--Gray-700);
+  }
+  .desktop-topbar nav {
+    gap: 16px;
+  }
+  .topbar-link {
+    min-height: 44px;
+    padding: 0 4px;
+    border-radius: 8px;
+  }
+  .topbar-link:hover {
+    color: var(--Primary-600);
+  }
+  .topbar-add {
+    width: auto;
+    min-height: 40px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .search-row {
+    position: absolute;
+    top: var(--Layout-Top-bar-height);
+    left: 0;
+    width: var(--Layout-Panel-width);
+    height: var(--Layout-Search-height);
+    padding: 16px 16px 24px;
+    background: var(--Gray-0);
+    border-right: 1px solid var(--Gray-200);
+  }
+  .search-field {
+    min-width: 0;
+    height: 44px;
+  }
+  .search-field input {
+    font-size: 13px;
+  }
+  .design-map,
+  .map-failure,
+  .map-loading-fallback {
+    inset: var(--Layout-Top-bar-height) 0 0 var(--Layout-Panel-width);
+  }
+  .app-shell .list-sheet {
+    top: var(--Layout-Panel-top);
+    right: auto;
+    bottom: 0;
+    left: 0;
+    width: var(--Layout-Panel-width);
+    height: auto;
+    min-height: 0 !important;
+    max-height: none;
+    border-radius: 0;
+    border-right: 1px solid var(--Gray-200);
+    box-shadow: none;
+    padding-top: 16px;
+    transform: none;
+    transition: none;
+  }
+  .list-sheet > .sheet-drag-target {
+    display: none;
+  }
+  .app-shell .list-sheet .list-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  .app-shell .list-sheet--collapsed .list-scroll {
+    display: block;
+  }
+  .list-scroll {
+    padding-bottom: 24px;
+  }
+  .list-heading .Heading-H2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .app-shell .list-sheet .state-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: safe center;
+    min-height: 0;
+    flex: 1;
+    padding: 24px 16px;
+    overflow: auto;
+  }
+  .search-panel {
+    top: var(--Layout-Panel-top);
+    right: auto;
+    width: var(--Layout-Panel-width);
+    border-right: 1px solid var(--Gray-200);
+  }
+  .overlay-stage {
+    top: var(--Layout-Panel-top);
+    right: auto;
+    width: var(--Layout-Panel-width);
+  }
+  .overlay-stage::before,
+  .modal-layer > .scrim {
+    display: none;
+  }
+  .overlay-stage .modal-sheet {
+    inset: 0;
+    height: 100%;
+    min-height: 0 !important;
+    max-height: none;
+    padding-top: 16px;
+    border-radius: 0;
+    border-right: 1px solid var(--Gray-200);
+    box-shadow: none;
+    animation: none;
+  }
+  .overlay-motion {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      opacity var(--Motion-Fade-duration) ease,
+      transform var(--Motion-Fade-duration) var(--Motion-Ease-out);
+  }
+  .overlay-stage--exiting .overlay-motion {
+    opacity: 0;
+    transform: translateX(-12px);
+    transition-duration: var(--Motion-Fade-duration);
+  }
+  @starting-style {
+    .overlay-motion {
+      opacity: 0;
+      transform: translateX(-12px);
+    }
+  }
+  .modal-handle-target {
+    display: none;
+  }
+  .sheet-header h2 {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .sheet-actions {
+    padding-bottom: 16px;
+  }
+  .location-steps .sheet-actions {
+    flex-wrap: wrap;
+  }
+  .location-steps .sheet-actions > .button {
+    width: 100%;
+  }
+  .state-sheet .sheet-body {
+    display: flex;
+    align-items: safe center;
+  }
+  .state-sheet .state-content {
+    width: 100%;
+  }
+  .spot {
+    flex-shrink: 0;
+  }
+  .sheet-body,
+  .search-panel,
+  .list-scroll {
+    scrollbar-width: thin;
+  }
+  .confirm-layer {
+    position: fixed;
+  }
+  .confirm-dialog {
+    width: 360px;
+    max-width: calc(100vw - 32px);
+  }
+  .design-map .maplibregl-ctrl-top-right {
+    top: auto;
+    bottom: 80px;
+    right: 24px;
+  }
+  .map-locate {
+    top: auto;
+    right: 24px;
+    bottom: 24px;
+  }
+  .search-area {
+    top: 24px;
+  }
+  .map-marker-host .map-pin {
+    width: 32px;
+    height: 32px;
+    inset: 6px;
+  }
+  .map-pin .figma-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .loading-chip {
+    left: calc(var(--Layout-Panel-width) + 24px);
+  }
+  .shelter-card:hover {
+    background: var(--Gray-100);
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --Layout-Panel-width: 390px;
+  }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+  .brand-caption {
+    display: none;
+  }
+  .desktop-topbar {
+    padding: 0 16px;
+  }
+  .desktop-topbar nav {
+    gap: 12px;
+  }
+}

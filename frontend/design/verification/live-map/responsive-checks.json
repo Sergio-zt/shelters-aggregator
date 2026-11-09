@@ -1,0 +1,122 @@
+[
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "initial",
+    "brokenImages": 0,
+    "canvasHeight": 582,
+    "canvasWidth": 320,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "details",
+    "brokenImages": 0,
+    "canvasHeight": 582,
+    "canvasWidth": 320,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 320,
+    "height": 740,
+    "screen": "empty",
+    "brokenImages": 0,
+    "canvasHeight": 582,
+    "canvasWidth": 320,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "initial",
+    "brokenImages": 0,
+    "canvasHeight": 686,
+    "canvasWidth": 390,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "details",
+    "brokenImages": 0,
+    "canvasHeight": 686,
+    "canvasWidth": 390,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "screen": "empty",
+    "brokenImages": 0,
+    "canvasHeight": 686,
+    "canvasWidth": 390,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "initial",
+    "brokenImages": 0,
+    "canvasHeight": 686,
+    "canvasWidth": 480,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "details",
+    "brokenImages": 0,
+    "canvasHeight": 686,
+    "canvasWidth": 480,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 480,
+    "height": 844,
+    "screen": "empty",
+    "brokenImages": 0,
+    "canvasHeight": 686,
+    "canvasWidth": 480,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "initial",
+    "brokenImages": 0,
+    "canvasHeight": 794,
+    "canvasWidth": 480,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "details",
+    "brokenImages": 0,
+    "canvasHeight": 794,
+    "canvasWidth": 480,
+    "oldSvg": false,
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "height": 1000,
+    "screen": "empty",
+    "brokenImages": 0,
+    "canvasHeight": 794,
+    "canvasWidth": 480,
+    "oldSvg": false,
+    "overflow": false
+  }
+]

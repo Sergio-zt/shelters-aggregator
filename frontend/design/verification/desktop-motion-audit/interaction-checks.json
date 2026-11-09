@@ -1,0 +1,444 @@
+{
+  "searchExitSamples": [
+    {
+      "exiting": true,
+      "input": "",
+      "opacity": "1",
+      "present": true,
+      "retainedText": "No matchesWe couldn’t find “Zzz motion”.Check the spelling, or try a street, a metro station, or an address in Kyiv.Choose a location to see shelters in that area."
+    },
+    {
+      "exiting": true,
+      "input": "",
+      "opacity": "0.463681",
+      "present": true,
+      "retainedText": "No matchesWe couldn’t find “Zzz motion”.Check the spelling, or try a street, a metro station, or an address in Kyiv.Choose a location to see shelters in that area."
+    },
+    {
+      "exiting": true,
+      "input": "",
+      "opacity": "0.0349648",
+      "present": true,
+      "retainedText": "No matchesWe couldn’t find “Zzz motion”.Check the spelling, or try a street, a metro station, or an address in Kyiv.Choose a location to see shelters in that area."
+    },
+    {
+      "input": "",
+      "opacity": null,
+      "present": false
+    },
+    {
+      "input": "",
+      "opacity": null,
+      "present": false
+    },
+    {
+      "input": "",
+      "opacity": null,
+      "present": false
+    }
+  ],
+  "dialogChecks": [
+    {
+      "backgroundInert": true,
+      "portal": "app-shell",
+      "rect": {
+        "bottom": 491,
+        "height": 214,
+        "left": 332,
+        "right": 692,
+        "top": 277,
+        "width": 360,
+        "x": 332,
+        "y": 277
+      },
+      "scenario": "dialog-open"
+    },
+    {
+      "opacity": "1",
+      "present": true,
+      "scenario": "dialog-exit"
+    },
+    {
+      "opacity": "0.896777",
+      "present": true,
+      "scenario": "dialog-exit"
+    },
+    {
+      "opacity": "0.602694",
+      "present": true,
+      "scenario": "dialog-exit"
+    },
+    {
+      "opacity": "0.0778137",
+      "present": true,
+      "scenario": "dialog-exit"
+    },
+    {
+      "opacity": "0.0546938",
+      "present": true,
+      "scenario": "dialog-exit"
+    }
+  ],
+  "stateAudit": [
+    {
+      "bodyHeight": 530,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "filters",
+      "width": 390
+    },
+    {
+      "bodyHeight": 634,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "details",
+      "width": 390
+    },
+    {
+      "bodyHeight": 530,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "feedback",
+      "width": 390
+    },
+    {
+      "bodyHeight": 346,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "location",
+      "width": 390
+    },
+    {
+      "bodyHeight": 366,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "denied",
+      "width": 390
+    },
+    {
+      "bodyHeight": 306,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "outside",
+      "width": 390
+    },
+    {
+      "bodyHeight": 470,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "location-steps",
+      "width": 390
+    },
+    {
+      "bodyHeight": 232,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "sent",
+      "width": 390
+    },
+    {
+      "bodyHeight": 530,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "add",
+      "width": 390
+    },
+    {
+      "bodyHeight": 530,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "site-feedback",
+      "width": 390
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "dialog",
+      "scenario": "about",
+      "width": 390
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "empty",
+      "width": 390
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "error",
+      "width": 390
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "loading",
+      "width": 390
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "filters",
+      "width": 768
+    },
+    {
+      "bodyHeight": 708,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "details",
+      "width": 768
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "feedback",
+      "width": 768
+    },
+    {
+      "bodyHeight": 736,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "location",
+      "width": 768
+    },
+    {
+      "bodyHeight": 736,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "denied",
+      "width": 768
+    },
+    {
+      "bodyHeight": 736,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "outside",
+      "width": 768
+    },
+    {
+      "bodyHeight": 567,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "location-steps",
+      "width": 768
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "sent",
+      "width": 768
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "add",
+      "width": 768
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "site-feedback",
+      "width": 768
+    },
+    {
+      "bodyHeight": 708,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "about",
+      "width": 768
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "empty",
+      "width": 768
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "error",
+      "width": 768
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "loading",
+      "width": 768
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "filters",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 708,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "details",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "feedback",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 736,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "location",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 736,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "denied",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 736,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "outside",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 567,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "location-steps",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "sent",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "add",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 627,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "site-feedback",
+      "width": 1440
+    },
+    {
+      "bodyHeight": 708,
+      "dialogCount": 1,
+      "headerY": 0,
+      "overflow": false,
+      "role": "region",
+      "scenario": "about",
+      "width": 1440
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "empty",
+      "width": 1440
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "error",
+      "width": 1440
+    },
+    {
+      "dialogCount": 0,
+      "headerY": 0,
+      "overflow": false,
+      "scenario": "loading",
+      "width": 1440
+    }
+  ]
+}
