@@ -1,4 +1,14 @@
-from sqlalchemy import Column, Integer, Float, String, ForeignKey, Table, DateTime, func
+from sqlalchemy import (
+    Column,
+    Integer,
+    Float,
+    String,
+    Text,
+    ForeignKey,
+    Table,
+    DateTime,
+    func,
+)
 from sqlalchemy.dialects.postgresql import JSONB, UUID
 from sqlalchemy.orm import relationship
 
@@ -109,5 +119,30 @@ class PlaceView(Base):
     visitor_id = Column(UUID(as_uuid=True), nullable=True)
     # The database sets the time itself when the row is created
     viewed_at = Column(
+        DateTime(timezone=True), nullable=False, server_default=func.now()
+    )
+
+
+class SuggestedPlace(Base):
+    # A new shelter suggested by a user in the "Add a shelter" form.
+    # It is not shown on the map until a moderator checks it
+    __tablename__ = "suggested_places"
+
+    id = Column(Integer, primary_key=True, index=True)
+
+    # Fields from the form
+    address = Column(String, nullable=False)
+    # One code: basement, metro, underpass, semi_basement, parking or other
+    type = Column(String, nullable=True)
+    # List of facility codes, e.g. ["ramp", "wifi"]
+    facilities = Column(JSONB, nullable=True)
+    details = Column(Text, nullable=True)
+
+    # Every new suggestion waits for moderation
+    status = Column(String, nullable=False, default="pending", server_default="pending")
+
+    # Who sent it and when, to limit how often one visitor can send suggestions
+    visitor_id = Column(UUID(as_uuid=True), nullable=True)
+    created_at = Column(
         DateTime(timezone=True), nullable=False, server_default=func.now()
     )
