@@ -10,9 +10,13 @@ class PlaceResponse(BaseModel):
     district_id: int | None = None
 
     # Multi-language fields (JSONB in the database)
+    name: dict[str, str] | None = None
     address: dict[str, str] | None = None
     type: dict[str, str] | None = None
     capacity_tier: dict[str, str] | None = None
+    operating_hours: dict[str, str] | None = None
+
+    comfort_index: int | None = None
 
     latitude: float
     longitude: float
