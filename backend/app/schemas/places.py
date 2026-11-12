@@ -20,7 +20,6 @@ class PlaceResponse(BaseModel):
 
     latitude: float
     longitude: float
-    photo_url: str | None = None
 
     reviews_count: int = 0
     # null = no ratings yet (not 0 stars)
