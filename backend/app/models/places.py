@@ -5,6 +5,7 @@ from sqlalchemy import (
     String,
     Text,
     ForeignKey,
+    CheckConstraint,
     Table,
     DateTime,
     func,
@@ -82,11 +83,25 @@ class Place(Base):
     )
 
     # Multi-language fields
+    # Shelter name, e.g. {"uk": "Станція метро Академмістечко"}
+    name = Column(JSONB, nullable=True)
     address = Column(JSONB, nullable=True)
     type = Column(JSONB, nullable=True)
     # Capacity category from the analyst dataset,
     # e.g. {"uk": "Висока місткість (>1000 осіб)"}
     capacity_tier = Column(JSONB, nullable=True)
+    # Free text from the analyst dataset, e.g. {"uk": "цілодобово"}
+    operating_hours = Column(JSONB, nullable=True)
+
+    # How many of the 7 facilities the place has ("6/7" in the dataset -> 6)
+    comfort_index = Column(
+        Integer,
+        CheckConstraint(
+            "comfort_index >= 0 AND comfort_index <= 7",
+            name="places_comfort_index_check",
+        ),
+        nullable=True,
+    )
 
     # Coordinates
     latitude = Column(Float, nullable=False)
