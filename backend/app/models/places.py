@@ -107,8 +107,6 @@ class Place(Base):
     latitude = Column(Float, nullable=False)
     longitude = Column(Float, nullable=False)
 
-    photo_url = Column(String, nullable=True)
-
     # Reviews summary
     reviews_count = Column(Integer, nullable=False, default=0, server_default="0")
     # NULL means "no ratings yet", so the frontend doesn't show 0 stars
