@@ -220,3 +220,24 @@ async def test_search_places_invalid_params(client):
     for params in invalid_params:
         response = await client.get("/places/search", params=params)
         assert response.status_code == 422, params
+
+
+async def test_search_places_returns_name_hours_and_comfort_index(client, db_session):
+    db_session.add(
+        Place(
+            latitude=50.44,
+            longitude=30.49,
+            name={"uk": "Станція метро Житомирська"},
+            operating_hours={"uk": "05:30–23:20"},
+            comfort_index=4,
+        )
+    )
+    await db_session.commit()
+
+    response = await client.get("/places/search")
+
+    assert response.status_code == 200
+    place = response.json()[0]
+    assert place["name"]["uk"] == "Станція метро Житомирська"
+    assert place["operating_hours"]["uk"] == "05:30–23:20"
+    assert place["comfort_index"] == 4

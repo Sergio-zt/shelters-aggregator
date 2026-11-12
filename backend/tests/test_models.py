@@ -91,3 +91,28 @@ async def test_suggested_place_needs_address(db_session):
     # Address is required in the form, so the database doesn't allow an empty one
     with pytest.raises(IntegrityError):
         await db_session.commit()
+
+
+async def test_place_name_hours_and_comfort_index(db_session):
+    place = Place(
+        latitude=50.45,
+        longitude=30.52,
+        name={"uk": "Станція метро Академмістечко"},
+        operating_hours={"uk": "05:30–23:20"},
+        comfort_index=6,
+    )
+    db_session.add(place)
+    await db_session.commit()
+    await db_session.refresh(place)
+
+    assert place.name["uk"] == "Станція метро Академмістечко"
+    assert place.operating_hours["uk"] == "05:30–23:20"
+    assert place.comfort_index == 6
+
+
+async def test_comfort_index_cannot_be_more_than_7(db_session):
+    # There are only 7 facilities, so the index can't be bigger
+    db_session.add(Place(latitude=50.45, longitude=30.52, comfort_index=8))
+
+    with pytest.raises(IntegrityError):
+        await db_session.commit()
