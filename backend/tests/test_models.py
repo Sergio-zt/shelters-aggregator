@@ -11,7 +11,6 @@ async def test_create_place(db_session, test_district, test_facility):
         longitude=30.5234,
         address={"en": "123 Main St", "uk": "вул. Головна, 123"},
         type={"en": "Basement", "uk": "Підвал"},
-        photo_url="https://example.com/photo.jpg",
         district_id=test_district.id,
     )
     new_place.facilities.append(test_facility)

@@ -241,3 +241,13 @@ async def test_search_places_returns_name_hours_and_comfort_index(client, db_ses
     assert place["name"]["uk"] == "Станція метро Житомирська"
     assert place["operating_hours"]["uk"] == "05:30–23:20"
     assert place["comfort_index"] == 4
+
+
+async def test_search_places_has_no_photo(client, db_session):
+    db_session.add(Place(latitude=50.44, longitude=30.49))
+    await db_session.commit()
+
+    response = await client.get("/places/search")
+
+    # The team decided not to use images, so the API doesn't return them
+    assert "photo_url" not in response.json()[0]
