@@ -58,44 +58,6 @@ async def test_get_places_empty(db_session):
     assert places == []
 
 
-async def test_add_suggested_place_visitor_id_is_none(db_session):
-    data = SuggestedPlaceCreate(
-        address="Kyiv, Khreshchatyk Street, 10",
-        type="basement",
-        facilities=["wifi", "wc"],
-        details="Test suggestion",
-    )
-
-    suggested_place = await add_suggested_place(db_session, data, visitor_id=None)
-
-    assert suggested_place.address == data.address
-    assert suggested_place.type == data.type
-    assert suggested_place.facilities == data.facilities
-    assert suggested_place.details == data.details
-    assert suggested_place.status == "pending"
-    assert suggested_place.id is not None
-    assert suggested_place.visitor_id is None
-
-
-async def test_add_suggested_place_wrong_visitor_id(db_session):
-    data = SuggestedPlaceCreate(
-        address="Kyiv, Khreshchatyk Street, 10",
-        type="basement",
-        facilities=["wifi", "wc"],
-        details="Test suggestion",
-    )
-
-    suggested_place = await add_suggested_place(db_session, data, visitor_id="ABC2141r")
-
-    assert suggested_place.address == data.address
-    assert suggested_place.type == data.type
-    assert suggested_place.facilities == data.facilities
-    assert suggested_place.details == data.details
-    assert suggested_place.status == "pending"
-    assert suggested_place.id is not None
-    assert suggested_place.visitor_id is None
-
-
 async def test_add_suggested_place_with_visitor_id(db_session):
     data = SuggestedPlaceCreate(
         address="Kyiv, Khreshchatyk Street, 10",
@@ -104,7 +66,7 @@ async def test_add_suggested_place_with_visitor_id(db_session):
         details="Test suggestion",
     )
 
-    visitor_id = str(uuid.uuid4())
+    visitor_id = uuid.uuid4()
 
     suggested_place = await add_suggested_place(db_session, data, visitor_id)
 
@@ -114,4 +76,4 @@ async def test_add_suggested_place_with_visitor_id(db_session):
     assert suggested_place.details == data.details
     assert suggested_place.status == "pending"
     assert suggested_place.id is not None
-    assert suggested_place.visitor_id == uuid.UUID(visitor_id)
+    assert suggested_place.visitor_id == uuid.UUID(str(visitor_id))

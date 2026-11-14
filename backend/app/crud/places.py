@@ -116,15 +116,9 @@ async def add_place_view(db: AsyncSession, place_id: int, visitor_id: str | None
 
 
 async def add_suggested_place(
-    db: AsyncSession, data: SuggestedPlaceCreate, visitor_id: str | None
+    db: AsyncSession, data: SuggestedPlaceCreate, visitor_id: uuid.UUID
 ) -> SuggestedPlace:
     """Create a new suggested place."""
-
-    if visitor_id is not None:
-        try:
-            visitor_id = uuid.UUID(visitor_id)
-        except ValueError:
-            visitor_id = None
 
     suggested_place = SuggestedPlace(**data.model_dump(), visitor_id=visitor_id)
 
