@@ -28,7 +28,7 @@ class PlaceResponse(BaseModel):
 
 class MultiLanguage(BaseModel):
     uk: str
-    en: str
+    en: str | None = None
 
 
 class DistrictResponse(BaseModel):
@@ -53,6 +53,9 @@ class PlaceCatalogResponse(BaseModel):
     address: MultiLanguage | None = None
     type: MultiLanguage | None = None
     capacity_tier: MultiLanguage | None = None
+    operating_hours: MultiLanguage | None = None
+
+    comfort_index: int | None = None
 
     latitude: float
     longitude: float
@@ -72,6 +75,9 @@ class PlaceRetrieveResponse(BaseModel):
     address: MultiLanguage | None = None
     type: MultiLanguage | None = None
     capacity_tier: MultiLanguage | None = None
+    operating_hours: MultiLanguage | None = None
+
+    comfort_index: int | None = None
 
     latitude: float
     longitude: float
