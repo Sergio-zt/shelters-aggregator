@@ -3,7 +3,7 @@ from pydantic import BaseModel, ConfigDict
 
 class MultiLanguage(BaseModel):
     uk: str
-    en: str
+    en: str | None = None
 
 
 class DistrictResponse(BaseModel):
