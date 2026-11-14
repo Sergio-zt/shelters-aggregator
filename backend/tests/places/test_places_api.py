@@ -61,3 +61,90 @@ async def test_get_places_success(client, db_session):
         test_place.id,
         test_place2.id,
     }
+
+
+async def test_create_suggestion_success(client, db_session):
+    payload = {
+        "address": "Kyiv, Khreshchatyk Street, 10",
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 201
+
+    data = response.json()
+
+    assert data["id"] is not None
+    assert data["address"] == payload["address"]
+    assert data["type"] == payload["type"]
+    assert data["facilities"] == payload["facilities"]
+    assert data["details"] == payload["details"]
+    assert data["status"] == "pending"
+    assert "created_at" in data
+
+
+async def test_create_suggestion_without_address(client, db_session):
+    payload = {
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 422
+
+
+async def test_create_suggestion_empty_address(client, db_session):
+    payload = {
+        "address": "",
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 422
+
+
+async def test_create_suggestion_blank_address(client, db_session):
+    payload = {
+        "address": "  ",
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 422
+
+
+async def test_create_suggestion_address_too_long(client, db_session):
+    payload = {
+        "address": "a" * 256,
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 422
+
+
+async def test_create_suggestion_wrong_facilities_not_list(client, db_session):
+    payload = {
+        "address": "Kyiv, Khreshchatyk Street, 10",
+        "type": "basement",
+        "facilities": "wc",
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 422
