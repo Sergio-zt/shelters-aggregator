@@ -1,3 +1,5 @@
+import uuid
+
 from backend.app.models.places import Place
 
 
@@ -71,6 +73,8 @@ async def test_create_suggestion_success(client, db_session):
         "details": "Test suggestion",
     }
 
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
+
     response = await client.post("/suggestion", json=payload)
 
     assert response.status_code == 201
@@ -93,6 +97,8 @@ async def test_create_suggestion_without_address(client, db_session):
         "details": "Test suggestion",
     }
 
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
+
     response = await client.post("/suggestion", json=payload)
 
     assert response.status_code == 422
@@ -105,6 +111,8 @@ async def test_create_suggestion_empty_address(client, db_session):
         "facilities": ["wifi", "wc"],
         "details": "Test suggestion",
     }
+
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
 
     response = await client.post("/suggestion", json=payload)
 
@@ -119,6 +127,8 @@ async def test_create_suggestion_blank_address(client, db_session):
         "details": "Test suggestion",
     }
 
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
+
     response = await client.post("/suggestion", json=payload)
 
     assert response.status_code == 422
@@ -131,6 +141,8 @@ async def test_create_suggestion_address_too_long(client, db_session):
         "facilities": ["wifi", "wc"],
         "details": "Test suggestion",
     }
+
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
 
     response = await client.post("/suggestion", json=payload)
 
@@ -145,6 +157,57 @@ async def test_create_suggestion_wrong_facilities_not_list(client, db_session):
         "details": "Test suggestion",
     }
 
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
+
     response = await client.post("/suggestion", json=payload)
 
     assert response.status_code == 422
+
+
+async def test_create_suggestion_without_visitor_id(client, db_session):
+    payload = {
+        "address": "Kyiv, Khreshchatyk Street, 10",
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Visitor id not provided"}
+
+
+async def test_create_suggestion_wrong_visitor_id(client, db_session):
+    payload = {
+        "address": "Kyiv, Khreshchatyk Street, 10",
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    client.cookies.set("visitor_id", "ABC123")
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 400
+    assert response.json() == {"detail": "Invalid visitor id"}
+
+
+async def test_create_suggestion_rate_limit(client, db_session):
+    payload = {
+        "address": "Kyiv, Khreshchatyk Street, 10",
+        "type": "basement",
+        "facilities": ["wifi", "wc"],
+        "details": "Test suggestion",
+    }
+
+    client.cookies.set("visitor_id", str(uuid.uuid4()))
+
+    for _ in range(5):
+        response = await client.post("/suggestion", json=payload)
+        assert response.status_code == 201
+
+    response = await client.post("/suggestion", json=payload)
+
+    assert response.status_code == 429
