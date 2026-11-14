@@ -6,12 +6,15 @@ from backend.app.crud.places import (
     get_place,
     get_places,
     add_place_view,
+    add_suggested_place,
 )
 from backend.app.db.database import get_db
 from backend.app.schemas.places import (
     PlaceResponse,
     PlaceRetrieveResponse,
     PlaceCatalogResponse,
+    SuggestedPlaceCreate,
+    SuggestedPlaceResponse,
 )
 
 router = APIRouter()
@@ -137,3 +140,22 @@ async def save_place_view(
     await add_place_view(db, place.id, visitor_id)
 
     return {"detail": "View saved"}
+
+
+@router.post(
+    "/suggestion",
+    response_model=SuggestedPlaceResponse,
+    status_code=201,
+    tags=["suggestions"],
+    summary="Suggest a new place",
+    description=(
+        "Submit a suggestion for a new shelter location. "
+        "The suggestion is saved with a pending status and a unique ID is returned."
+    ),
+)
+async def create_suggestion(
+    data: SuggestedPlaceCreate,
+    db: AsyncSession = Depends(get_db),
+    visitor_id: str | None = Cookie(default=None),
+):
+    return await add_suggested_place(db, data, visitor_id)
