@@ -4,7 +4,8 @@ from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from backend.app.models.places import District, Place, PlaceView
+from backend.app.models.places import District, Place, PlaceView, SuggestedPlace
+from backend.app.schemas.places import SuggestedPlaceCreate
 
 EARTH_RADIUS_METERS = 6371000
 
@@ -112,3 +113,22 @@ async def add_place_view(db: AsyncSession, place_id: int, visitor_id: str | None
     place_view = PlaceView(place_id=place_id, visitor_id=visitor_id)
     db.add(place_view)
     await db.commit()
+
+
+async def add_suggested_place(
+    db: AsyncSession, data: SuggestedPlaceCreate, visitor_id: str | None
+) -> SuggestedPlace:
+    """Create a new suggested place."""
+
+    if visitor_id is not None:
+        try:
+            visitor_id = uuid.UUID(visitor_id)
+        except ValueError:
+            visitor_id = None
+
+    suggested_place = SuggestedPlace(**data.model_dump(), visitor_id=visitor_id)
+
+    db.add(suggested_place)
+    await db.commit()
+    await db.refresh(suggested_place)
+    return suggested_place
