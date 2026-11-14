@@ -1,6 +1,8 @@
+import uuid
 from fastapi import APIRouter, Cookie, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from backend.app.core.rate_limiter import check_rate_limit
 from backend.app.crud.places import (
     search_places,
     get_place,
@@ -158,4 +160,20 @@ async def create_suggestion(
     db: AsyncSession = Depends(get_db),
     visitor_id: str | None = Cookie(default=None),
 ):
+    if visitor_id is None:
+        raise HTTPException(
+            status_code=400,
+            detail="Visitor id not provided",
+        )
+
+    try:
+        visitor_id = uuid.UUID(visitor_id)
+    except ValueError:
+        raise HTTPException(
+            status_code=400,
+            detail="Invalid visitor id",
+        )
+
+    check_rate_limit(str(visitor_id))
+
     return await add_suggested_place(db, data, visitor_id)
