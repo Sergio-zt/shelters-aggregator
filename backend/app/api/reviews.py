@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends, Cookie
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from backend.app.crud.reviews import add_review
+from backend.app.crud.reviews import add_review, get_reviews
 from backend.app.db.database import get_db
 from backend.app.schemas.reviews import ReviewResponse, ReviewCreate
 
@@ -16,7 +16,8 @@ router = APIRouter()
     status_code=201,
     response_model=ReviewResponse,
     summary="Add a website review",
-    description="Create a review about the website. Requires a valid visitor ID cookie.",
+    description="Create a review about the website."
+    " Requires a valid visitor ID cookie.",
 )
 async def create_website_review(
     data: ReviewCreate,
@@ -49,7 +50,8 @@ async def create_website_review(
     status_code=201,
     response_model=ReviewResponse,
     summary="Add a place review",
-    description="Create a review for a specific place. Requires a valid place ID and visitor ID cookie.",
+    description="Create a review for a specific place."
+    " Requires a valid place ID and visitor ID cookie.",
 )
 async def create_place_review(
     place_id: int,
@@ -73,5 +75,33 @@ async def create_place_review(
 
     try:
         return await add_review(db, data, visitor_id, place_id)
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+
+@router.get(
+    "/reviews",
+    tags=["reviews"],
+    response_model=list[ReviewResponse],
+    summary="Get website reviews",
+    description="Retrieve all reviews submitted about the website,"
+    " ordered from newest to oldest.",
+)
+async def get_reviews_for_website(db: AsyncSession = Depends(get_db)):
+    return await get_reviews(db)
+
+
+@router.get(
+    "/places/{place_id}/reviews",
+    tags=["reviews"],
+    response_model=list[ReviewResponse],
+    summary="Get reviews for a place",
+    description="Retrieve all reviews for a specific place,"
+    " ordered from newest to oldest."
+    " Returns 404 if the place does not exist.",
+)
+async def get_reviews_for_place(place_id: int, db: AsyncSession = Depends(get_db)):
+    try:
+        return await get_reviews(db, place_id)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
