@@ -17,6 +17,7 @@ sys.path.insert(0, root_path)
 # Imports below need root_path in sys.path, so they can't be at the top
 from backend.app.db.database import Base  # noqa: E402
 import backend.app.models.places  # noqa: E402, F401 - registers models in Base
+import backend.app.models.reviews  # noqa: E402, F401 - registers models in Base
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
