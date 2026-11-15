@@ -246,5 +246,8 @@
   "search.exampleQuery": "Zhyto",
   "shelter.defaultName": "Shelter {id}",
   "distance.meters": "{value} m",
-  "distance.kilometers": "{value} km"
+  "distance.kilometers": "{value} km",
+  "feedback.name": "Your name",
+  "feedback.namePlaceholder": "How should we call you?",
+  "feedback.exampleName": "Olena"
 }

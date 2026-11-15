@@ -68,6 +68,7 @@ export function createHttpApi(
       ) as PlaceDto[],
     submitFeedback: async (input, o) => {
       await request('/feedback', o, 'POST', {
+        name: input.name,
         comment: input.comment,
         shelter_id: input.shelterId,
       });

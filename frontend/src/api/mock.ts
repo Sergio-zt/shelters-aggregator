@@ -123,6 +123,7 @@ export function createMockApi({
       }, options),
     submitFeedback: (input, options) =>
       request(() => {
+        if (!input.name.trim()) throw new Error('Name is required');
         if (!input.comment.trim()) throw new Error('Comment is required');
       }, options),
     suggestShelter: (input, options) =>

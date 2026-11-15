@@ -864,6 +864,9 @@ svg {
   margin-bottom: 12px;
   color: var(--Gray-800);
 }
+.feedback-name-field {
+  margin-bottom: 12px;
+}
 textarea.field.feedback-comment {
   height: 72px;
   resize: none;
@@ -871,6 +874,7 @@ textarea.field.feedback-comment {
     border-color var(--Motion-Control-duration) ease,
     background-color var(--Motion-Control-duration) ease;
 }
+.feedback-name:focus,
 .feedback-comment:focus {
   border-color: var(--Primary-500);
   background: var(--Gray-0);

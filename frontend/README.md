@@ -51,7 +51,7 @@ Append `?preview=NAME` to the local URL. These are explicit design previews, not
 | `search`, `search-empty`, `results`                                                           | Search suggestions / no matches / chosen location    |
 | `filters`, `empty`                                                                            | Filters / no matching shelters                       |
 | `details`, `details-loading`, `details-error`                                                 | Details / skeleton / retry state                     |
-| `feedback`, `feedback-ready`, `feedback-error`                                                | Shared feedback with shelter context / ready / error |
+| `feedback`, `feedback-ready`, `feedback-sending`, `feedback-error`                            | Shared feedback with shelter context / ready / error |
 | `menu`, `about`, `add`, `feedback-menu`, `feedback-menu-error`, `feedback-sent`, `sent`       | Menu and forms                                       |
 | `location`, `denied`, `location-blocked`, `location-steps`, `location-unavailable`, `outside` | Location states                                      |
 | `loading`, `error`, `map-error`                                                               | List loading / list error / map failure              |
@@ -113,3 +113,9 @@ The separate SiteFeedbackSheet, its navigation state, old answer styles and four
 UI copy is in `src/i18n/en.json` and `uk.json`. The API returns the initial language; switching saves the preference and applies its confirmed response. Open panels, drafts, filters, selected IDs and map camera survive language changes. Catalog records, district lookups, place search and forms pass through `AppApi`. DTO adapters validate coordinates and IDs; minimal backend points need no fixture lookup. The basemap remains unchanged.
 
 See [API_INTEGRATION.md](API_INTEGRATION.md) for the service boundary, example DTOs, environment configuration and the remaining backend-contract decisions. These example endpoints are placeholders to adapt to the backend, not requirements for its implementation. The old timer-only `usePreviewSubmit` hook was replaced by cancellable API submissions. Earlier audit reports describe the builds tested on their stated dates.
+
+## Feedback name field — 2026-11-15
+
+The updated Figma Screens 14.1–14.4 require both Your name and Your comment. The shared form now includes a required single-line name input (autocomplete=name) and a required multiline comment. Send is disabled for empty/whitespace-only values; both values are trimmed in the payload. Pending disables both controls and displays the existing spinner; errors retain both values and offer Try again. Menu feedback uses the same form without shelter context. Local EN/UK dictionaries include the new labels and placeholder. The HTTP payload includes the author name separately from optional shelter context.
+
+`?preview=feedback-sending` exposes a static sending state without submitting. Ready/error previews seed both fields. See `design/verification/feedback-name-2026-11-15/README.md` for the latest checks. Historical reports remain snapshots of their dated builds.

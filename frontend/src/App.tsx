@@ -95,6 +95,7 @@ const previewOverlays: Record<string, Overlay> = {
   sent: 'sent',
   'feedback-menu': 'feedback',
   'feedback-ready': 'feedback',
+  'feedback-sending': 'feedback',
   'feedback-menu-error': 'feedback',
   'feedback-sent': 'feedback-sent',
   'details-loading': 'details',
@@ -187,7 +188,12 @@ export default function App() {
       : null,
   );
   const [feedbackShelterId, setFeedbackShelterId] = useState<string | null>(
-    ['feedback', 'feedback-error', 'feedback-ready'].includes(preview ?? '')
+    [
+      'feedback',
+      'feedback-error',
+      'feedback-ready',
+      'feedback-sending',
+    ].includes(preview ?? '')
       ? 'metro-zhytomyrska'
       : null,
   );
@@ -775,11 +781,23 @@ export default function App() {
                       'feedback-error',
                       'feedback-menu-error',
                     ].includes(preview ?? '')}
+                    previewSending={preview === 'feedback-sending'}
+                    initialName={
+                      [
+                        'feedback-error',
+                        'feedback-menu-error',
+                        'feedback-ready',
+                        'feedback-sending',
+                      ].includes(preview ?? '')
+                        ? t('feedback.exampleName')
+                        : ''
+                    }
                     initialComment={
                       [
                         'feedback-error',
                         'feedback-menu-error',
                         'feedback-ready',
+                        'feedback-sending',
                       ].includes(preview ?? '')
                         ? t('feedback.example')
                         : ''

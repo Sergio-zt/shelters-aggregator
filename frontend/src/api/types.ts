@@ -35,6 +35,7 @@ export interface PlaceDto {
   longitude: number;
 }
 export interface FeedbackInput {
+  name: string;
   comment: string;
   shelterId?: string;
   shelterName?: string;

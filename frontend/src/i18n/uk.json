@@ -246,5 +246,8 @@
   "search.exampleQuery": "Жито",
   "shelter.defaultName": "Укриття {id}",
   "distance.meters": "{value} м",
-  "distance.kilometers": "{value} км"
+  "distance.kilometers": "{value} км",
+  "feedback.name": "Ваше ім’я",
+  "feedback.namePlaceholder": "Як до вас звертатися?",
+  "feedback.exampleName": "Олена"
 }

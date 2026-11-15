@@ -44,8 +44,14 @@ test('mock catalog goes through the same API adapter in both languages', async (
   assert.ok(places.length > 0);
   assert.equal(adaptPlaces(places, 'uk')[0].name, 'Житомирська');
 });
-test('mock submission refuses empty feedback', async () => {
-  await assert.rejects(
-    createMockApi({ delayMs: 0 }).submitFeedback({ comment: '  ' }),
-  );
+test('mock feedback requires both name and comment, including whitespace-only values', async () => {
+  const api = createMockApi({ delayMs: 0 });
+  for (const input of [
+    { name: '', comment: 'Valid comment' },
+    { name: '  ', comment: 'Valid comment' },
+    { name: 'Olena', comment: '' },
+    { name: 'Олена', comment: ' \n ' },
+  ])
+    await assert.rejects(api.submitFeedback(input));
+  await api.submitFeedback({ name: 'Олена', comment: 'Перевірка відгуку' });
 });

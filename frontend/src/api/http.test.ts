@@ -42,5 +42,28 @@ test('successful writes accept an empty HTTP response body', async () => {
     '/api',
     (async () => new Response(null, { status: 200 })) as typeof fetch,
   );
-  await api.submitFeedback({ comment: 'Test comment' });
+  await api.submitFeedback({ name: 'Olena', comment: 'Test comment' });
+});
+
+test('feedback HTTP payload includes the name, comment and optional shelter context', async () => {
+  const calls: RequestInit[] = [];
+  const api = createHttpApi('/api', (async (_url, init) => {
+    calls.push(init!);
+    return new Response(null, { status: 204 });
+  }) as typeof fetch);
+  await api.submitFeedback({
+    name: 'Олена',
+    comment: 'Коментар',
+    shelterId: '123',
+  });
+  assert.deepEqual(JSON.parse(String(calls[0].body)), {
+    name: 'Олена',
+    comment: 'Коментар',
+    shelter_id: '123',
+  });
+  await api.submitFeedback({ name: 'Olena', comment: 'Site feedback' });
+  assert.deepEqual(JSON.parse(String(calls[1].body)), {
+    name: 'Olena',
+    comment: 'Site feedback',
+  });
 });

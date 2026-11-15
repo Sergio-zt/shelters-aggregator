@@ -1,0 +1,144 @@
+{
+  "checks": [
+    {
+      "scenario": "comment-only-disabled",
+      "passed": true
+    },
+    {
+      "scenario": "whitespace-name-disabled",
+      "passed": true
+    },
+    {
+      "scenario": "complete-form-enabled",
+      "passed": true
+    },
+    {
+      "scenario": "whitespace-comment-disabled",
+      "passed": true
+    },
+    {
+      "scenario": "mock-submit-success",
+      "passed": true
+    },
+    {
+      "scenario": "error-keeps-name-comment",
+      "passed": true
+    },
+    {
+      "scenario": "retry-success",
+      "passed": true
+    },
+    {
+      "scenario": "sending-disabled-spinner",
+      "passed": true,
+      "staticPreview": true
+    },
+    {
+      "scenario": "language-switch-preserves-fields",
+      "passed": true
+    },
+    {
+      "scenario": "menu-shares-form-without-shelter-context",
+      "passed": true
+    }
+  ],
+  "layouts": [
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback",
+      "width": 320
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-ready",
+      "width": 320
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-sending",
+      "width": 320
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-error",
+      "width": 320
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback",
+      "width": 390
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-ready",
+      "width": 390
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-sending",
+      "width": 390
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-error",
+      "width": 390
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback",
+      "width": 1440
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-ready",
+      "width": 1440
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-sending",
+      "width": 1440
+    },
+    {
+      "commentHeight": 72,
+      "nameHeight": 48,
+      "overflow": false,
+      "resize": "none",
+      "state": "feedback-error",
+      "width": 1440
+    }
+  ],
+  "console": []
+}
