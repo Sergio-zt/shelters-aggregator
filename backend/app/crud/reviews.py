@@ -54,3 +54,37 @@ async def add_review(
     except Exception:
         await db.rollback()
         raise
+
+
+async def get_reviews(
+    db: AsyncSession,
+    place_id: int | None = None,
+) -> list[Review]:
+    """Get all reviews for a place or website."""
+
+    if place_id is not None:
+        # Return reviews for place
+        result = await db.execute(select(Place).where(Place.id == place_id))
+
+        place = result.scalar_one_or_none()
+
+        if place is None:
+            raise ValueError("Place not found")
+
+        result = await db.execute(
+            select(Review)
+            .where(Review.place_id == place_id)
+            .order_by(Review.created_at.desc())
+        )
+
+    else:
+        # Return reviews for website
+        result = await db.execute(
+            select(Review)
+            .where(Review.place_id.is_(None))
+            .order_by(Review.created_at.desc())
+        )
+
+    reviews = result.scalars().all()
+
+    return list(reviews)
