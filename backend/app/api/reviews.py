@@ -3,6 +3,7 @@ from fastapi import APIRouter, HTTPException
 from fastapi.params import Depends, Cookie
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from backend.app.core.rate_limiter import check_rate_limit
 from backend.app.crud.reviews import add_review, get_reviews
 from backend.app.db.database import get_db
 from backend.app.schemas.reviews import ReviewResponse, ReviewCreate
@@ -38,6 +39,8 @@ async def create_website_review(
             detail="Invalid visitor id",
         )
 
+    check_rate_limit(str(visitor_id))
+
     try:
         return await add_review(db, data, visitor_id)
     except ValueError as e:
@@ -72,6 +75,8 @@ async def create_place_review(
             status_code=400,
             detail="Invalid visitor id",
         )
+
+    check_rate_limit(str(visitor_id))
 
     try:
         return await add_review(db, data, visitor_id, place_id)
