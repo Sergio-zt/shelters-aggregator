@@ -226,3 +226,7 @@ node_modules/
 dist/
 build/
 .npm/
+
+# Data files from the analyst (don't commit)
+shelters_*.csv
+shelters_*.xlsx
