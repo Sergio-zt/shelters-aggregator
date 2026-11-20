@@ -36,15 +36,13 @@ async def add_review(
         if place is not None:
             result = await db.execute(
                 select(
-                    func.count(Review.id),
-                    func.avg(Review.rating),
+                    func.count(Review.id)
                 ).where(Review.place_id == review.place_id)
             )
 
-            review_count, review_avg = result.one()
+            review_count = result.scalar_one()
 
             place.reviews_count = review_count
-            place.average_rating = review_avg
 
         await db.commit()
         await db.refresh(review)
