@@ -12,7 +12,6 @@ async def test_get_website_reviews(db_session):
     website_review = Review(
         visitor_id=uuid.uuid4(),
         author_name="Artem",
-        rating=5,
         text="Great website",
         place_id=None,
     )
@@ -40,7 +39,6 @@ async def test_get_place_reviews(db_session):
     place_review = Review(
         visitor_id=uuid.uuid4(),
         author_name="Artem",
-        rating=4,
         text="Good shelter",
         place_id=place.id,
     )
@@ -52,7 +50,6 @@ async def test_get_place_reviews(db_session):
     assert len(result) == 1
     assert result[0].id == place_review.id
     assert result[0].place_id == place.id
-    assert result[0].rating == 4
 
 
 async def test_get_website_reviews_empty(db_session):
@@ -84,7 +81,6 @@ async def test_get_place_reviews_wrong_id(db_session):
 async def test_add_website_review(db_session):
     data = ReviewCreate(
         author_name="Artem",
-        rating=5,
         text="Great website",
     )
     visitor_id = uuid.uuid4()
@@ -95,7 +91,6 @@ async def test_add_website_review(db_session):
     assert result.place_id is None
     assert result.visitor_id == visitor_id
     assert result.author_name == "Artem"
-    assert result.rating == 5
     assert result.text == "Great website"
 
 
@@ -111,7 +106,6 @@ async def test_add_place_review(db_session):
 
     data = ReviewCreate(
         author_name="Artem",
-        rating=4,
         text="Good shelter",
     )
     visitor_id = uuid.uuid4()
@@ -121,7 +115,6 @@ async def test_add_place_review(db_session):
     assert result.id is not None
     assert result.place_id == place.id
     assert result.visitor_id == visitor_id
-    assert result.rating == 4
 
 
 async def test_add_place_review_updates_statistics(db_session):
@@ -136,12 +129,10 @@ async def test_add_place_review_updates_statistics(db_session):
 
     first_review = ReviewCreate(
         author_name="User 1",
-        rating=5,
         text="Excellent",
     )
     second_review = ReviewCreate(
         author_name="User 2",
-        rating=3,
         text="Average",
     )
 
@@ -151,13 +142,11 @@ async def test_add_place_review_updates_statistics(db_session):
     await db_session.refresh(place)
 
     assert place.reviews_count == 2
-    assert place.average_rating == 4.0
 
 
 async def test_add_review_wrong_place_id(db_session):
     data = ReviewCreate(
         author_name="Artem",
-        rating=5,
         text="Great shelter",
     )
 
