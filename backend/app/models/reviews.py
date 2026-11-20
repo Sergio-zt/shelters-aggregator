@@ -6,7 +6,6 @@ from sqlalchemy import (
     String,
     DateTime,
     func,
-    CheckConstraint,
 )
 from sqlalchemy.orm import relationship
 

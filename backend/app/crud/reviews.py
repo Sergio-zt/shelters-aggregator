@@ -35,9 +35,7 @@ async def add_review(
 
         if place is not None:
             result = await db.execute(
-                select(
-                    func.count(Review.id)
-                ).where(Review.place_id == review.place_id)
+                select(func.count(Review.id)).where(Review.place_id == review.place_id)
             )
 
             review_count = result.scalar_one()

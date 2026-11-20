@@ -169,9 +169,7 @@ async def test_create_review_missing_fields(client):
 
     response = await client.post(
         "/reviews",
-        json={
-
-        },
+        json={},
     )
 
     assert response.status_code == 422
