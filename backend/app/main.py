@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from backend.app.api.filters import router as filters_router
 from backend.app.api.places import router as places_router
 from backend.app.api.visitors import router as visitor_router
+from backend.app.api.reviews import router as review_router
 
 app = FastAPI(
     title="Shelters Aggregator API",
@@ -12,6 +13,7 @@ app = FastAPI(
 app.include_router(visitor_router)
 app.include_router(places_router)
 app.include_router(filters_router)
+app.include_router(review_router)
 
 
 @app.get("/health")

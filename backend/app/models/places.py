@@ -117,6 +117,7 @@ class Place(Base):
     facilities = relationship(
         "Facility", secondary=place_facilities_association, back_populates="places"
     )
+    reviews = relationship("Review", back_populates="place")
 
 
 class PlaceView(Base):
