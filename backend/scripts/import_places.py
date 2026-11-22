@@ -17,6 +17,7 @@ from sqlalchemy.orm import selectinload
 
 from backend.app.db.database import SessionLocal
 from backend.app.models.places import City, District, Facility, Place
+from backend.app.models.reviews import Review  # noqa: F401 - register Place.reviews
 
 CITY_NAME = {"uk": "Київ", "en": "Kyiv"}
 
