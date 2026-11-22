@@ -68,7 +68,34 @@ export function adaptShelters(
       dto.access === 'limited'
         ? dto.access
         : 'unknown';
-    const facilities = Array.isArray(dto.facilities) ? dto.facilities : [];
+    const aliases: Record<string, string> = {
+      'wi-fi': 'wifi',
+      wifi: 'wifi',
+      електрика: 'electricity',
+      electricity: 'electricity',
+      пандус: 'ramp',
+      ramp: 'ramp',
+      'можна з тваринами': 'pets',
+      'pets allowed': 'pets',
+      туалет: 'toilet',
+      toilet: 'toilet',
+    };
+    const facilities = (
+      Array.isArray(dto.facilities) ? dto.facilities : []
+    ).flatMap((item) => {
+      if (typeof item === 'string') return [item];
+      const entry = record(item);
+      return entry
+        ? ['uk', 'en']
+            .map(
+              (lang) =>
+                aliases[
+                  localizedText(entry.name, lang as Locale).toLowerCase()
+                ],
+            )
+            .filter(Boolean)
+        : [];
+    });
     shelters.push({
       id: shelterId,
       name: name || t('shelter.defaultName', { id: shelterId }),
@@ -79,14 +106,16 @@ export function adaptShelters(
         districtNames.get(districtId) ||
         t('common.unknownDistrict'),
       districtId: districtId || undefined,
-      kind: typeof dto.type === 'string' ? dto.type : '',
+      kind: localizedText(dto.type, locale),
       access,
       capacity:
         typeof dto.capacity === 'number'
           ? new Intl.NumberFormat(locale).format(dto.capacity)
-          : localizedText(dto.capacity, locale) || t('common.unspecified'),
+          : localizedText(dto.capacity_tier ?? dto.capacity, locale) ||
+            t('common.unspecified'),
       facilities: facilityKeys.filter((key) => facilities.includes(key)),
-      hours: localizedText(dto.hours, locale) || undefined,
+      hours:
+        localizedText(dto.operating_hours ?? dto.hours, locale) || undefined,
       exampleWalk: localizedText(dto.example_walk, locale) || undefined,
     });
   }
@@ -105,7 +134,8 @@ export function adaptPlaces(rows: unknown[], locale: Locale): SearchPlace[] {
     const dto = record(row);
     if (!dto) return [];
     const coordinates = readCoordinates(dto);
-    const name = localizedText(dto.name, locale);
+    const name =
+      localizedText(dto.name, locale) || localizedText(dto.address, locale);
     const placeId = id(dto.id);
     const kind =
       dto.kind === 'metro' || dto.kind === 'street' ? dto.kind : 'address';
@@ -114,10 +144,10 @@ export function adaptPlaces(rows: unknown[], locale: Locale): SearchPlace[] {
           {
             id: placeId,
             name,
-            description: localizedText(dto.description, locale),
+            description: localizedText(dto.description ?? dto.type, locale),
             kind,
             coordinates,
-            labels: dto.name as LocalizedText,
+            labels: (dto.name || dto.address) as LocalizedText,
           },
         ]
       : [];

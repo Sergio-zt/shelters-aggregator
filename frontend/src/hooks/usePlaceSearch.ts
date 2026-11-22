@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api } from '../api';
 import { adaptPlaces } from '../api/adapters';
-import type { PlaceDto } from '../api/types';
 import { useI18n } from '../i18n/I18nProvider';
 export function usePlaceSearch(query: string, enabled: boolean) {
   const { locale } = useI18n();
-  const [response, setResponse] = useState<{ query: string; rows: PlaceDto[] }>(
-    { query: '', rows: [] },
-  );
+  const [response, setResponse] = useState<{ query: string; rows: unknown[] }>({
+    query: '',
+    rows: [],
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [attempt, setAttempt] = useState(0);

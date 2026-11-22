@@ -117,3 +117,54 @@ VITE_API_BASE_URL=https://your-backend.example/api
 Тести покривають парність словників, змінні, українські форми числівників, збереження/скасування налаштувань, DTO районів і точок, порядок GeoJSON-координат, помилки HTTP та порожні успішні відповіді.
 
 Окрім mock-режиму, браузерний smoke-test виконано через тимчасовий локальний HTTP-сервер: його власна точка `http-coordinate-proof` з координатами `50.48 / 30.51` намалювалася на карті, `district_id` перетворився на назву району, некоректна точка була відхилена, а мова відновилася після PATCH/reload. Тестовий сервер не є бекендом проєкту та після перевірки зупинений.
+
+## Local backend proxy — 2026-11-21
+
+The Vite development server forwards `/api/*` to `http://127.0.0.1:8000/*`,
+removing the `/api` prefix and preserving query parameters and cookies.
+With Docker running, `/api/health` should return the backend health response.
+This configuration is for development; production hosting needs its own routing.
+Keep `VITE_API_MODE=mock` until HTTP routes, DTOs and language preferences are adapted.
+The current backend has no `/preferences` endpoint, which currently blocks HTTP bootstrap.
+
+## Real backend transport — 2026-11-21
+
+HTTP transport now uses GET /places, GET /filters (districts), and
+GET /places/search?q=...&limit=100. Search shows up to 100 server matches;
+full pagination and separate detail fetch remain follow-up work.
+Reviews initialize GET /visitor and POST {author_name, text} to /reviews
+or /places/{id}/reviews. Suggestions initialize the visitor and POST /suggestion.
+Cookies are included. Review inputs follow backend limits of 100/2000 characters.
+Catalog adapters accept multilingual types/capacity_tier/operating_hours and
+facility ID/name objects. Unknown access stays unknown.
+
+Language in HTTP mode is temporarily local (safeplace.language), because the
+backend has no preference endpoint. Earlier descriptions of server-confirmed
+HTTP language settings and placeholder routes are superseded by this section.
+The mock transport remains available for isolated UI previews.
+
+Deployment is pending Docker installation. Do not claim live backend verification
+from unit tests. A local ignored backend/shelters_local_test.csv contains three
+user-authorized synthetic records for the normal importer. No real shelter dataset
+has been provided. Run migrations before importing. Keep VITE_API_MODE=mock until
+health and database-backed endpoints pass, then set it to http in .env.local.
+
+## Local live verification — 2026-11-21
+
+The local frontend now selects HTTP in ignored .env.local. Real FastAPI and
+PostgreSQL passed catalog, district/filter, search, detail and persistence checks.
+The frontend transport was exercised through Vite proxy with cookies and a saved
+review; adapters produced three valid map records. This is not a visual browser audit.
+The environment currently uses host Python 3.13/PostgreSQL 14, since Docker download
+failed. The declared Python 3.14/PostgreSQL 17 Docker setup remains unverified.
+Three synthetic shelters and smoke submissions are isolated in the local database.
+Language still persists locally; detail panels use the loaded real catalog.
+
+## Details integration — 2026-11-22
+
+Added AppApi.getShelter and useShelterDetails. Details load separately by ID with
+loading/error/retry, abort on close/selection change and stale-response protection.
+Locale changes adapt the cached response without refetching. Mock supports details.
+Lint/build/format and 41 existing tests pass; added detail transport test passes
+separately (42 total). Real GET details and 404 verified through Vite proxy.
+Visual browser/motion audit not repeated. No push or commit performed.

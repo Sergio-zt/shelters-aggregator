@@ -82,6 +82,7 @@ export function FeedbackSheet({
           className="field feedback-name"
           type="text"
           autoComplete="name"
+          maxLength={100}
           required
           placeholder={t('feedback.namePlaceholder')}
           value={name}
@@ -97,6 +98,7 @@ export function FeedbackSheet({
         id="feedback-comment"
         className="field feedback-comment"
         rows={2}
+        maxLength={2000}
         required
         placeholder={t('feedback.placeholder')}
         value={comment}

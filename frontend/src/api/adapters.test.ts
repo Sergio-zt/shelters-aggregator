@@ -107,3 +107,26 @@ test('malformed search records cannot crash the suggestions view', () => {
     [],
   );
 });
+
+test('backend multilingual catalog and facility objects adapt', () => {
+  const dto = {
+    ...row,
+    type: { uk: 'Метро', en: 'Metro' },
+    capacity_tier: { uk: 'До 100', en: 'Up to 100' },
+    operating_hours: { uk: 'цілодобово', en: '24/7' },
+    facilities: [
+      { id: 4, name: { uk: 'Електрика', en: 'Electricity' } },
+      { id: 5, name: { uk: 'Wi-Fi', en: 'Wi-Fi' } },
+    ],
+  };
+  const result = adaptShelters([dto], [], 'en').shelters[0];
+  assert.equal(result.kind, 'Metro');
+  assert.equal(result.capacity, 'Up to 100');
+  assert.equal(result.hours, '24/7');
+  assert.deepEqual(result.facilities, ['wifi', 'electricity']);
+  assert.equal(result.access, 'unknown');
+  assert.equal(
+    adaptPlaces([{ ...dto, name: null }], 'uk')[0].name,
+    'API address',
+  );
+});

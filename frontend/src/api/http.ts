@@ -1,4 +1,4 @@
-import type { AppApi, PlaceDto, PreferencesDto, RequestOptions } from './types';
+import type { AppApi, RequestOptions } from './types';
 export class ApiError extends Error {
   constructor(
     public status: number,
@@ -21,6 +21,7 @@ export function createHttpApi(
   ): Promise<T> {
     const response = await fetcher(`${base}${path}`, {
       method,
+      credentials: 'include',
       signal: options?.signal,
       headers: {
         Accept: 'application/json',
@@ -57,24 +58,55 @@ export function createHttpApi(
     );
   };
   return {
-    getPreferences: (o) => request<PreferencesDto>('/preferences', o),
-    updateLanguage: (language, o) =>
-      request<PreferencesDto>('/preferences', o, 'PATCH', { language }),
-    getDistricts: async (o) => list(await request<unknown>('/districts', o)),
-    getShelters: async (o) => list(await request<unknown>('/shelters', o)),
+    getPreferences: async () => {
+      let language = 'uk';
+      try {
+        language =
+          globalThis.localStorage?.getItem('safeplace.language') || 'uk';
+      } catch {
+        /* Storage can be unavailable. */
+      }
+      return { language };
+    },
+    updateLanguage: async (language) => {
+      try {
+        globalThis.localStorage?.setItem('safeplace.language', language);
+      } catch {
+        /* Keep the language usable for this session. */
+      }
+      return { language };
+    },
+    getDistricts: async (o) =>
+      (await request<{ districts: unknown[] }>('/filters', o)).districts,
+    getShelter: (id, o) => request(`/places/${encodeURIComponent(id)}`, o),
+    getShelters: async (o) => list(await request<unknown>('/places', o)),
     searchPlaces: async (query, o) =>
       list(
-        await request<unknown>(`/places?q=${encodeURIComponent(query)}`, o),
-      ) as PlaceDto[],
+        await request<unknown>(
+          `/places/search?q=${encodeURIComponent(query)}&limit=100`,
+          o,
+        ),
+      ),
     submitFeedback: async (input, o) => {
-      await request('/feedback', o, 'POST', {
-        name: input.name,
-        comment: input.comment,
-        shelter_id: input.shelterId,
-      });
+      await request('/visitor', o);
+      await request(
+        input.shelterId
+          ? `/places/${encodeURIComponent(input.shelterId)}/reviews`
+          : '/reviews',
+        o,
+        'POST',
+        {
+          author_name: input.name,
+          text: input.comment,
+        },
+      );
     },
     suggestShelter: async (input, o) => {
-      await request('/shelter-suggestions', o, 'POST', input);
+      await request('/visitor', o);
+      await request('/suggestion', o, 'POST', {
+        ...input,
+        type: input.type?.toLowerCase().replaceAll('-', '_') ?? null,
+      });
     },
   };
 }

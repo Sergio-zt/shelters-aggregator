@@ -53,8 +53,9 @@ export interface AppApi {
     options?: RequestOptions,
   ): Promise<PreferencesDto>;
   getDistricts(options?: RequestOptions): Promise<unknown[]>;
+  getShelter(id: string, options?: RequestOptions): Promise<unknown>;
   getShelters(options?: RequestOptions): Promise<unknown[]>;
-  searchPlaces(query: string, options?: RequestOptions): Promise<PlaceDto[]>;
+  searchPlaces(query: string, options?: RequestOptions): Promise<unknown[]>;
   submitFeedback(input: FeedbackInput, options?: RequestOptions): Promise<void>;
   suggestShelter(
     input: ShelterSuggestionInput,

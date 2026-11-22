@@ -1,25 +1,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createHttpApi, ApiError } from './http';
-test('HTTP preferences use JSON PATCH and keep the server response authoritative', async () => {
-  const calls: { url: string; init?: RequestInit }[] = [];
-  const fake = async (url: URL | RequestInfo, init?: RequestInit) => {
-    calls.push({ url: String(url), init });
-    return new Response(JSON.stringify({ language: 'uk' }), { status: 200 });
-  };
-  const api = createHttpApi(
-    'https://api.example.test/v1/',
-    fake as typeof fetch,
-  );
-  const controller = new AbortController();
-  assert.deepEqual(
-    await api.updateLanguage('en', { signal: controller.signal }),
-    { language: 'uk' },
-  );
-  assert.equal(calls[0].url, 'https://api.example.test/v1/preferences');
-  assert.equal(calls[0].init?.method, 'PATCH');
-  assert.equal(calls[0].init?.body, '{"language":"en"}');
-  assert.equal(calls[0].init?.signal, controller.signal);
+test('local preferences do not call an absent backend endpoint', async () => {
+  const api = createHttpApi('/api', (async () => {
+    throw new Error('Unexpected network call');
+  }) as typeof fetch);
+  assert.deepEqual(await api.updateLanguage('en'), { language: 'en' });
+  assert.ok((await api.getPreferences()).language);
 });
 test('HTTP failures are errors, not empty catalogs; list envelopes are normalized', async () => {
   const broken = createHttpApi(
@@ -45,10 +32,10 @@ test('successful writes accept an empty HTTP response body', async () => {
   await api.submitFeedback({ name: 'Olena', comment: 'Test comment' });
 });
 
-test('feedback HTTP payload includes the name, comment and optional shelter context', async () => {
-  const calls: RequestInit[] = [];
-  const api = createHttpApi('/api', (async (_url, init) => {
-    calls.push(init!);
+test('feedback initializes visitor and posts backend review payload to the correct route', async () => {
+  const calls: { url: string; init?: RequestInit }[] = [];
+  const api = createHttpApi('/api', (async (url, init) => {
+    calls.push({ url: String(url), init });
     return new Response(null, { status: 204 });
   }) as typeof fetch);
   await api.submitFeedback({
@@ -56,14 +43,37 @@ test('feedback HTTP payload includes the name, comment and optional shelter cont
     comment: 'Коментар',
     shelterId: '123',
   });
-  assert.deepEqual(JSON.parse(String(calls[0].body)), {
-    name: 'Олена',
-    comment: 'Коментар',
-    shelter_id: '123',
+  assert.deepEqual(
+    calls.map((c) => c.url),
+    ['/api/visitor', '/api/places/123/reviews'],
+  );
+  assert.deepEqual(JSON.parse(String(calls[1].init?.body)), {
+    author_name: 'Олена',
+    text: 'Коментар',
   });
+  assert.ok(calls.every((c) => c.init?.credentials === 'include'));
   await api.submitFeedback({ name: 'Olena', comment: 'Site feedback' });
-  assert.deepEqual(JSON.parse(String(calls[1].body)), {
-    name: 'Olena',
-    comment: 'Site feedback',
-  });
+  assert.equal(calls[3].url, '/api/reviews');
+});
+test('visitor failure prevents review submission', async () => {
+  let count = 0;
+  const api = createHttpApi('/api', (async () => {
+    count++;
+    return new Response('', { status: 400 });
+  }) as typeof fetch);
+  await assert.rejects(api.submitFeedback({ name: 'A', comment: 'B' }));
+  assert.equal(count, 1);
+});
+
+test('detail requests preserve cancellation and surface a missing shelter', async () => {
+  const controller = new AbortController();
+  const api = createHttpApi('/api', (async (url, init) => {
+    assert.equal(String(url), '/api/places/42');
+    assert.equal(init?.signal, controller.signal);
+    return new Response('{"detail":"Place not found"}', { status: 404 });
+  }) as typeof fetch);
+  await assert.rejects(
+    api.getShelter('42', { signal: controller.signal }),
+    (error: unknown) => error instanceof ApiError && error.status === 404,
+  );
 });

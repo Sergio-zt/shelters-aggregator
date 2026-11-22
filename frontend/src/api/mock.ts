@@ -86,6 +86,24 @@ export function createMockApi({
         () => [{ id: 'sviatoshyn', name: pair('district.sviatoshyn') }],
         options,
       ),
+    getShelter: (id, options) =>
+      request(() => {
+        const s = initialShelters.find((item) => item.id === id);
+        if (!s) throw new Error('Shelter not found');
+        return {
+          id: s.id,
+          name: pair(`demo.${s.id}.name`),
+          address: pair(`demo.${s.id}.address`),
+          district: pair('district.sviatoshyn'),
+          type: s.kind,
+          access: s.access,
+          capacity: pair(`demo.${s.id}.capacity`),
+          facilities: [...s.facilities],
+          hours: pair(`demo.${s.id}.hours`),
+          example_walk: pair(`demo.${s.id}.walk`),
+          ...s.coordinates,
+        };
+      }, options),
     getShelters: (options) =>
       request(
         () =>

@@ -19,6 +19,7 @@ import {
 import { FilterIcon } from './components/FilterIcon';
 import { api } from './api';
 import { adaptPlaces, type SearchPlace } from './api/adapters';
+import { useShelterDetails } from './hooks/useShelterDetails';
 import { useShelterCatalog } from './hooks/useShelterCatalog';
 import { usePlaceSearch } from './hooks/usePlaceSearch';
 import { useI18n } from './i18n/I18nProvider';
@@ -226,6 +227,10 @@ export default function App() {
       : preview === 'details-error'
         ? 'error'
         : 'ready',
+  );
+  const details = useShelterDetails(
+    selectedId,
+    overlay === 'details' && detailsMode === 'ready',
   );
   const [moved, setMoved] = useState(false);
   const [searchBounds, setSearchBounds] = useState<MapBounds | null>(null);
@@ -759,19 +764,27 @@ export default function App() {
                 )}
                 {displayedOverlay === 'details' &&
                   selected &&
-                  (detailsMode !== 'ready' ? (
+                  (detailsMode !== 'ready' ||
+                  details.loading ||
+                  details.error ||
+                  !details.shelter ? (
                     <DetailsState
                       name={selected.name}
-                      loading={detailsMode === 'loading'}
+                      loading={detailsMode === 'loading' || details.loading}
                       onClose={close}
-                      onRetry={() => setDetailsMode('ready')}
+                      onRetry={() => {
+                        setDetailsMode('ready');
+                        details.retry();
+                      }}
                     />
                   ) : (
                     <ShelterDetails
-                      shelter={selected}
+                      shelter={details.shelter}
                       distance={nearby || Boolean(chosenPlace)}
                       onClose={close}
-                      onFeedback={() => openFeedback(selected)}
+                      onFeedback={() =>
+                        openFeedback(details.shelter ?? selected)
+                      }
                     />
                   ))}
                 {displayedOverlay === 'feedback' && (
