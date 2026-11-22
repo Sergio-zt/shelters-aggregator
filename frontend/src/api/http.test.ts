@@ -77,3 +77,58 @@ test('detail requests preserve cancellation and surface a missing shelter', asyn
     (error: unknown) => error instanceof ApiError && error.status === 404,
   );
 });
+
+test('search loads subsequent pages beyond 100 results', async () => {
+  const urls: string[] = [];
+  const api = createHttpApi('/api', (async (url) => {
+    urls.push(String(url));
+    const skip = Number(
+      new URL(String(url), 'http://localhost').searchParams.get('skip'),
+    );
+    return new Response(
+      JSON.stringify(
+        Array.from({ length: skip === 0 ? 100 : 1 }, (_, i) => ({
+          id: skip + i,
+        })),
+      ),
+    );
+  }) as typeof fetch);
+  assert.equal((await api.searchPlaces('метро & парк')).length, 101);
+  assert.equal(
+    new URL(urls[0], 'http://localhost').searchParams.get('q'),
+    'метро & парк',
+  );
+  assert.equal(
+    new URL(urls[1], 'http://localhost').searchParams.get('skip'),
+    '100',
+  );
+});
+test('search stops pagination when cancelled', async () => {
+  const controller = new AbortController();
+  let calls = 0;
+  const api = createHttpApi('/api', (async () => {
+    calls++;
+    controller.abort();
+    return new Response(
+      JSON.stringify(Array.from({ length: 100 }, (_, id) => ({ id }))),
+    );
+  }) as typeof fetch);
+  await assert.rejects(
+    api.searchPlaces('test', { signal: controller.signal }),
+    { name: 'AbortError' },
+  );
+  assert.equal(calls, 1);
+});
+test('failed search page rejects partial results', async () => {
+  let calls = 0;
+  const api = createHttpApi('/api', (async () =>
+    ++calls === 1
+      ? new Response(
+          JSON.stringify(Array.from({ length: 100 }, (_, id) => ({ id }))),
+        )
+      : new Response('', { status: 503 })) as typeof fetch);
+  await assert.rejects(
+    api.searchPlaces('test'),
+    (error: unknown) => error instanceof ApiError && error.status === 503,
+  );
+});

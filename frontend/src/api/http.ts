@@ -80,13 +80,21 @@ export function createHttpApi(
       (await request<{ districts: unknown[] }>('/filters', o)).districts,
     getShelter: (id, o) => request(`/places/${encodeURIComponent(id)}`, o),
     getShelters: async (o) => list(await request<unknown>('/places', o)),
-    searchPlaces: async (query, o) =>
-      list(
-        await request<unknown>(
-          `/places/search?q=${encodeURIComponent(query)}&limit=100`,
-          o,
-        ),
-      ),
+    searchPlaces: async (query, o) => {
+      const rows: unknown[] = [];
+      const limit = 100;
+      for (let skip = 0; ; skip += limit) {
+        o?.signal?.throwIfAborted();
+        const page = list(
+          await request<unknown>(
+            `/places/search?q=${encodeURIComponent(query)}&limit=${limit}&skip=${skip}`,
+            o,
+          ),
+        );
+        rows.push(...page);
+        if (page.length < limit) return rows;
+      }
+    },
     submitFeedback: async (input, o) => {
       await request('/visitor', o);
       await request(

@@ -130,8 +130,8 @@ The current backend has no `/preferences` endpoint, which currently blocks HTTP 
 ## Real backend transport — 2026-11-21
 
 HTTP transport now uses GET /places, GET /filters (districts), and
-GET /places/search?q=...&limit=100. Search shows up to 100 server matches;
-full pagination and separate detail fetch remain follow-up work.
+GET /places/search?q=...&limit=100. Search loads successive pages of 100 until the final partial page.
+Cancellation stops further requests; a failed page rejects the partial result.
 Reviews initialize GET /visitor and POST {author_name, text} to /reviews
 or /places/{id}/reviews. Suggestions initialize the visitor and POST /suggestion.
 Cookies are included. Review inputs follow backend limits of 100/2000 characters.
@@ -168,3 +168,5 @@ Locale changes adapt the cached response without refetching. Mock supports detai
 Lint/build/format and 41 existing tests pass; added detail transport test passes
 separately (42 total). Real GET details and 404 verified through Vite proxy.
 Visual browser/motion audit not repeated. No push or commit performed.
+
+Search pagination verified on 2026-11-22: 101-result fixture, cancellation, failed second page, and live API smoke check. Full frontend check passes (45 tests).
