@@ -2,7 +2,19 @@
 
 React + TypeScript frontend implementation of the [Kyiv Shelter Finder Figma design](https://www.figma.com/design/4YpVF2wQVoAVgclRHq9FQO/Kyiv-Shelter-Finder?node-id=0-1). Reference viewports are **390 × 844** for mobile and **1440 × 900** for desktop. The responsive layout follows the Figma **Desktop · MVP (1440) → Handoff · Responsive layout** section: mobile below 768 px, a 360 px sidebar at 768–1023 px, and a 390 px sidebar from 1024 px. The desktop top bar is 64 px high and the map fills the space to the right of the sidebar.
 
-This stage includes layout and local frontend interactions only. All shelter records, pin positions, walking times and distances are **fictional design fixtures, not emergency information**. The basemap is a live MapLibre GL JS map using OpenFreeMap vector tiles. Shelter positions and search destinations are still explicit demo coordinates; no production shelter backend, real geocoding service or routing is connected. Data/search/forms use a replaceable mock/HTTP API boundary. In default mock mode forms do not send data outside the browser or persist across reloads. Language is a confirmed API preference (`uk`/`en`), with complete local Ukrainian/English JSON dictionaries; the mock preference survives reloads. HTTP mode uses the configured backend endpoints.
+The frontend supports mock previews and a real FastAPI backend. The live basemap
+uses MapLibre and OpenFreeMap; shelter pins use API coordinates in HTTP mode.
+Local verification currently uses synthetic shelter records. General geocoding
+and walking routing are not connected. Ukrainian/English UI dictionaries are local;
+language preferences in HTTP mode are temporarily stored in the browser.
+
+## Current integration status — 2026-11-23
+
+The HTTP transport now connects catalog, search, details, feedback and suggestions
+to the repository backend. Fresh checkouts default to mock; enable HTTP in local env.
+Language preferences remain local until the backend provides an endpoint.
+See [API_INTEGRATION.md](API_INTEGRATION.md) for current setup, contracts and limits.
+Later dated sections below describe historical stages and verification snapshots.
 
 ## Run
 
