@@ -78,8 +78,7 @@ export function AboutSheet({ onClose }: { onClose: () => void }) {
         <div className="access-explanation">
           <AccessBadge access="limited" />
           <span>
-            {t('about.limited')} <br />
-            {t('about.example')}{' '}
+            {t('about.limited')} {t('about.example')}{' '}
           </span>
         </div>
         <small>{t('about.notLive')} </small>
