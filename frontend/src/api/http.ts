@@ -76,9 +76,39 @@ export function createHttpApi(
       }
       return { language };
     },
-    getDistricts: async (o) =>
-      (await request<{ districts: unknown[] }>('/filters', o)).districts,
-    getShelter: (id, o) => request(`/places/${encodeURIComponent(id)}`, o),
+    getDistricts: async (o) => {
+      const value = await request<unknown>('/filters', o);
+      if (
+        !value ||
+        typeof value !== 'object' ||
+        !('districts' in value) ||
+        !Array.isArray(value.districts)
+      ) {
+        throw new ApiError(
+          502,
+          'Expected a district list in the filters response.',
+        );
+      }
+      return value.districts;
+    },
+    getShelter: async (id, o) => {
+      const value = await request<unknown>(
+        `/places/${encodeURIComponent(id)}`,
+        o,
+      );
+      if (
+        !value ||
+        typeof value !== 'object' ||
+        !('id' in value) ||
+        String(value.id) !== id
+      ) {
+        throw new ApiError(
+          502,
+          'Shelter response does not match the requested ID.',
+        );
+      }
+      return value;
+    },
     getShelters: async (o) => list(await request<unknown>('/places', o)),
     searchPlaces: async (query, o) => {
       const rows: unknown[] = [];

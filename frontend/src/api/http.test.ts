@@ -132,3 +132,37 @@ test('failed search page rejects partial results', async () => {
     (error: unknown) => error instanceof ApiError && error.status === 503,
   );
 });
+
+test('malformed filter responses fail explicitly; an empty district list is valid', async () => {
+  for (const value of [
+    null,
+    {},
+    { districts: null },
+    { districts: { items: [] } },
+  ]) {
+    const api = createHttpApi(
+      '/api',
+      (async () => new Response(JSON.stringify(value))) as typeof fetch,
+    );
+    await assert.rejects(
+      api.getDistricts(),
+      (error: unknown) => error instanceof ApiError && error.status === 502,
+    );
+  }
+  const api = createHttpApi(
+    '/api',
+    (async () => new Response('{"districts":[]}')) as typeof fetch,
+  );
+  assert.deepEqual(await api.getDistricts(), []);
+});
+test('details reject another shelter ID while allowing numeric backend IDs', async () => {
+  const api = createHttpApi(
+    '/api',
+    (async () => new Response('{"id":42}')) as typeof fetch,
+  );
+  assert.deepEqual(await api.getShelter('42'), { id: 42 });
+  await assert.rejects(
+    api.getShelter('43'),
+    (error: unknown) => error instanceof ApiError && error.status === 502,
+  );
+});
