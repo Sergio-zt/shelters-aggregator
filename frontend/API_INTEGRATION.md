@@ -107,5 +107,18 @@ No new visual/motion/Lighthouse audit was performed for this integration.
 Await backend clarification on access semantics, facility icon_name exposure,
 missing catalog/detail names, language preferences and real analyst data.
 The frontend currently filters facilities/area locally; /filters facility/type
-options are not yet wired as a complete dynamic UI vocabulary. View analytics
-POST /places/{id}/views is not connected yet. Production deployment is pending.
+options are not yet wired as a complete dynamic UI vocabulary. View analytics uses POST /places/{id}/views after successful detail loading.
+The request is best effort and is not retried automatically; analytics failure
+does not block details. A new opening resets tracking; locale changes and retries
+of the same opening do not reset it. Production deployment is pending.
+
+## Confirmed language design — 2026-11-23
+
+Backend supplies the selected user locale (uk/en). All UI copy remains in local
+frontend JSON dictionaries; switching selects the corresponding dictionary.
+No translation-text endpoint is needed. Exact preference read/update routes are
+still required before replacing the temporary local preference storage.
+
+View transport and actual persistence through Vite/PostgreSQL verified on
+2026-11-23. Frontend check passes (48 tests). Browser lifecycle/motion verification
+has not been repeated; transport tests do not prove React lifecycle behavior.

@@ -86,6 +86,7 @@ export function createMockApi({
         () => [{ id: 'sviatoshyn', name: pair('district.sviatoshyn') }],
         options,
       ),
+    recordShelterView: (_id, options) => request(() => undefined, options),
     getShelter: (id, options) =>
       request(() => {
         const s = initialShelters.find((item) => item.id === id);

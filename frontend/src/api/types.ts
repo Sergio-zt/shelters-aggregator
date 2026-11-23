@@ -53,6 +53,7 @@ export interface AppApi {
     options?: RequestOptions,
   ): Promise<PreferencesDto>;
   getDistricts(options?: RequestOptions): Promise<unknown[]>;
+  recordShelterView(id: string, options?: RequestOptions): Promise<void>;
   getShelter(id: string, options?: RequestOptions): Promise<unknown>;
   getShelters(options?: RequestOptions): Promise<unknown[]>;
   searchPlaces(query: string, options?: RequestOptions): Promise<unknown[]>;

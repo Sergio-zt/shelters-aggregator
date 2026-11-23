@@ -166,3 +166,14 @@ test('details reject another shelter ID while allowing numeric backend IDs', asy
     (error: unknown) => error instanceof ApiError && error.status === 502,
   );
 });
+
+test('view analytics posts to the selected shelter without a payload', async () => {
+  const api = createHttpApi('/api', (async (url, init) => {
+    assert.equal(String(url), '/api/places/42/views');
+    assert.equal(init?.method, 'POST');
+    assert.equal(init?.credentials, 'include');
+    assert.equal(init?.body, undefined);
+    return new Response(null, { status: 201 });
+  }) as typeof fetch);
+  await api.recordShelterView('42');
+});

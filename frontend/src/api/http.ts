@@ -91,6 +91,9 @@ export function createHttpApi(
       }
       return value.districts;
     },
+    recordShelterView: async (id, o) => {
+      await request(`/places/${encodeURIComponent(id)}/views`, o, 'POST');
+    },
     getShelter: async (id, o) => {
       const value = await request<unknown>(
         `/places/${encodeURIComponent(id)}`,

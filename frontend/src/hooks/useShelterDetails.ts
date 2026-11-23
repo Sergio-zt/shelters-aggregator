@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, useCallback } from 'react';
+import { useEffect, useMemo, useState, useCallback, useRef } from 'react';
 import { api } from '../api';
 import { adaptShelters } from '../api/adapters';
 import { useI18n } from '../i18n/I18nProvider';
@@ -10,6 +10,10 @@ export function useShelterDetails(id: string | null, enabled: boolean) {
     row?: unknown;
     error?: boolean;
   } | null>(null);
+  const viewed = useRef(false);
+  useEffect(() => {
+    viewed.current = false;
+  }, [id, enabled]);
   const [attempt, setAttempt] = useState(0);
   useEffect(() => {
     if (!enabled || !id) return;
@@ -18,7 +22,17 @@ export function useShelterDetails(id: string | null, enabled: boolean) {
     api
       .getShelter(id, { signal: controller.signal })
       .then((row) => {
-        if (!controller.signal.aborted) setResult({ id, row });
+        if (!controller.signal.aborted) {
+          setResult({ id, row });
+          if (
+            !viewed.current &&
+            adaptShelters([row], [], 'uk').shelters.length
+          ) {
+            viewed.current = true;
+            // Analytics is best effort: never block details or retry a potentially saved POST.
+            void api.recordShelterView(id).catch(() => undefined);
+          }
+        }
       })
       .catch(() => {
         if (!controller.signal.aborted) setResult({ id, error: true });
