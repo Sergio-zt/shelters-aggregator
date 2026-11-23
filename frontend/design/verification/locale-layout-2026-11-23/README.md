@@ -11,3 +11,11 @@ Browser verified: at 768px header nav x/width pairs are identical in EN/UA:
 At 390px all explanation rows measure 72px; screenshot inspected.
 At 320px all rows measure 72px; no explanation, badge or document overflow.
 Build passes. No motion/Lighthouse rerun for this layout-only change.
+
+## Follow-up: content-sized pills
+
+Removed the card badge grid and minimum widths (180/64/150px), plus the
+120px minimum on explanatory pills. Badges use their natural content width
+and the original wrapping flex row. A whole badge can move to the next row;
+text inside each pill stays on one line. Header width stabilization and equal
+access explanation rows remain. Earlier two-row badge notes are superseded.

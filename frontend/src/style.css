@@ -1582,23 +1582,6 @@ li {
   color: var(--System-Warning-Text);
 }
 
-/* Reserve the same badge rows in both locales instead of wrapping unpredictably. */
-.shelter-card .badges {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  justify-content: start;
-}
-.shelter-card .badges > .access-badge {
-  grid-column: 1 / -1;
-  justify-self: start;
-  min-width: 180px;
-}
-.shelter-card .badges > .badge:not(.access-badge) {
-  min-width: 64px;
-}
-.shelter-card .badges > .badge:last-child:not(.access-badge) {
-  min-width: 150px;
-}
 .badge {
   flex-shrink: 0;
 }
@@ -1618,7 +1601,6 @@ li {
 }
 .access-explanation .badge {
   justify-self: start;
-  min-width: 120px;
 }
 .access-explanation > span:not(.badge) {
   min-width: 0;
