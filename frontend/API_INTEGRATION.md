@@ -122,3 +122,16 @@ still required before replacing the temporary local preference storage.
 View transport and actual persistence through Vite/PostgreSQL verified on
 2026-11-23. Frontend check passes (48 tests). Browser lifecycle/motion verification
 has not been repeated; transport tests do not prove React lifecycle behavior.
+
+## Analyst data import — 2026-11-24
+
+Source: shelters_final_version.csv, Google Drive file 11kzEzkUW817qL6zvGPrB4T0F3yEHIRsr.
+3968 source rows; 2806 imported; 1127 missing coordinates and 35 outside the
+importer's Kyiv bounds skipped. No duplicate source IDs. Original CSV retained
+locally and ignored by Git. Imported into separate safeplace_analyst_local DB;
+old safeplace_integration_local synthetic data preserved.
+Local API on 8000 now uses safeplace_analyst_local. Restart with:
+`DATABASE_URL=postgresql+asyncpg://nester@localhost:5432/safeplace_analyst_local backend/.venv/bin/uvicorn backend.app.main:app --host 127.0.0.1 --port 8000`
+Frontend proxy verified: 2806 catalog records, 10 districts, 2806 valid adapted
+points, 42 metro search matches. Data import does not verify address/coordinate
+accuracy. Existing backend name/access/icon questions remain open.
