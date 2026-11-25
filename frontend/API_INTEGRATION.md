@@ -135,3 +135,15 @@ Local API on 8000 now uses safeplace_analyst_local. Restart with:
 Frontend proxy verified: 2806 catalog records, 10 districts, 2806 valid adapted
 points, 42 metro search matches. Data import does not verify address/coordinate
 accuracy. Existing backend name/access/icon questions remain open.
+
+## Full-data audit — 2026-11-25
+
+See [audit report](design/verification/analyst-data-2026-11-25/README.md).
+48 tests, lint/build/format pass. Live catalog has 2806 rows (~1.74 MB).
+Browser verified details, clusters, Wi-Fi filtering (403), locale switching,
+Escape from search and recovery through Retry after a deliberate API outage.
+The list mounts all 2806 cards (32,621 DOM nodes); bounded rendering is a priority.
+Search suggestions need addresses to distinguish repeated building names.
+Catalog/detail name and access semantics remain backend dependencies; imported
+free-form values often only have uk. Docker and Lighthouse remain unverified.
+The analyst dataset is now available; the earlier pending-data note is superseded.
