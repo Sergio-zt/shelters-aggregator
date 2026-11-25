@@ -1,3 +1,4 @@
+import { useProgressiveList } from '../../hooks/useProgressiveList';
 import {
   ChevronRight,
   LocationMarker,
@@ -28,6 +29,7 @@ export function SearchPanel({
   onExited?: () => void;
 }) {
   const { t } = useI18n();
+  const resultList = useProgressiveList(places);
   const trimmedQuery = query.trim();
   return (
     <section
@@ -75,13 +77,18 @@ export function SearchPanel({
             </span>
             <ChevronRight />
           </button>
-          {places.map((place) => {
+          {resultList.visibleItems.map((place, index) => {
             const match = place.name
               .toLocaleLowerCase()
               .indexOf(trimmedQuery.toLocaleLowerCase());
             return (
               <button
                 className="suggestion"
+                ref={
+                  index === resultList.focusIndex
+                    ? resultList.firstNewItemRef
+                    : undefined
+                }
                 key={place.id}
                 onClick={() => onChoose(place)}
               >
@@ -108,6 +115,15 @@ export function SearchPanel({
               </button>
             );
           })}
+          {resultList.hasMore && (
+            <button
+              type="button"
+              className="text-link"
+              onClick={resultList.showMore}
+            >
+              {t('common.showMore')}
+            </button>
+          )}
         </>
       ) : (
         <div className="search-no-results Body-M-Regular">

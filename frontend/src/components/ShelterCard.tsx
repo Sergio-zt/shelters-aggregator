@@ -1,3 +1,4 @@
+import type { Ref } from 'react';
 import { useI18n } from '../i18n/I18nProvider';
 import { shelterTypeLabel } from '../i18n/shelterLabels';
 import { ChevronRight, Walk, Capacity } from './UiIcons';
@@ -39,14 +40,21 @@ export function ShelterCard({
   shelter,
   onSelect,
   distance,
+  buttonRef,
 }: {
   shelter: Shelter;
   onSelect: () => void;
+  buttonRef?: Ref<HTMLButtonElement>;
   distance?: boolean;
 }) {
   const { t } = useI18n();
   return (
-    <button type="button" className="shelter-card" onClick={onSelect}>
+    <button
+      ref={buttonRef}
+      type="button"
+      className="shelter-card"
+      onClick={onSelect}
+    >
       <span className="card-heading">
         <strong className="Heading-H3">{shelter.name}</strong>
         <ChevronRight />

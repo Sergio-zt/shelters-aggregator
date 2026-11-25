@@ -21,6 +21,7 @@ import { api } from './api';
 import { adaptPlaces, type SearchPlace } from './api/adapters';
 import { useShelterDetails } from './hooks/useShelterDetails';
 import { useShelterCatalog } from './hooks/useShelterCatalog';
+import { useProgressiveList } from './hooks/useProgressiveList';
 import { usePlaceSearch } from './hooks/usePlaceSearch';
 import { useI18n } from './i18n/I18nProvider';
 import { localizedText } from './i18n/catalog';
@@ -269,6 +270,7 @@ export default function App() {
     () => candidates.filter((shelter) => matchesFilters(shelter, filters)),
     [candidates, filters],
   );
+  const cardList = useProgressiveList(records);
   const mapCenter = chosenPlace?.coordinates || geo.location || demoMapCenter;
   const filterCount = countFilters(filters);
   const isLoading = catalog.loading || preview === 'loading';
@@ -683,9 +685,14 @@ export default function App() {
                         </p>
                       </div>
                       <div className="list-scroll">
-                        {records.map((shelter) => (
+                        {cardList.visibleItems.map((shelter, index) => (
                           <ShelterCard
                             shelter={shelter}
+                            buttonRef={
+                              index === cardList.focusIndex
+                                ? cardList.firstNewItemRef
+                                : undefined
+                            }
                             key={shelter.id}
                             onSelect={() => {
                               select(shelter);
@@ -694,6 +701,15 @@ export default function App() {
                             distance={nearby || Boolean(chosenPlace)}
                           />
                         ))}
+                        {cardList.hasMore && (
+                          <button
+                            type="button"
+                            className="text-link"
+                            onClick={cardList.showMore}
+                          >
+                            {t('common.showMore')}
+                          </button>
+                        )}
                       </div>
                     </>
                   )}
