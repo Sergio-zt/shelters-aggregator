@@ -130,3 +130,38 @@ test('backend multilingual catalog and facility objects adapt', () => {
     'API address',
   );
 });
+
+test('search distinguishes repeated building names with localized addresses', () => {
+  const places = adaptPlaces(
+    [
+      {
+        ...row,
+        id: 1,
+        name: 'Житловий будинок',
+        address: { uk: 'Вулиця 1', en: 'Street 1' },
+      },
+      {
+        ...row,
+        id: 2,
+        name: 'Житловий будинок',
+        address: { uk: 'Вулиця 2', en: 'Street 2' },
+      },
+    ],
+    'en',
+  );
+  assert.equal(places[0].description, 'Street 1 · Новий тип');
+  assert.equal(places[1].description, 'Street 2 · Новий тип');
+  assert.deepEqual(
+    places.map((place) => place.id),
+    ['1', '2'],
+  );
+});
+
+test('address-only search results do not repeat their heading in the subtitle', () => {
+  const place = adaptPlaces(
+    [{ ...row, name: null, description: 'API address' }],
+    'en',
+  )[0];
+  assert.equal(place.name, 'API address');
+  assert.equal(place.description, '');
+});

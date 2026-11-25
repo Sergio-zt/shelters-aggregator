@@ -144,7 +144,15 @@ export function adaptPlaces(rows: unknown[], locale: Locale): SearchPlace[] {
           {
             id: placeId,
             name,
-            description: localizedText(dto.description ?? dto.type, locale),
+            description: [
+              localizedText(dto.address, locale),
+              localizedText(dto.description ?? dto.type, locale),
+            ]
+              .filter(
+                (text, index, parts) =>
+                  text && text !== name && parts.indexOf(text) === index,
+              )
+              .join(' · '),
             kind,
             coordinates,
             labels: (dto.name || dto.address) as LocalizedText,

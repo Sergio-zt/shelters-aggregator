@@ -147,3 +147,15 @@ Search suggestions need addresses to distinguish repeated building names.
 Catalog/detail name and access semantics remain backend dependencies; imported
 free-form values often only have uk. Docker and Lighthouse remain unverified.
 The analyst dataset is now available; the earlier pending-data note is superseded.
+
+## Rendering and search follow-up — 2026-11-25
+
+Catalog and search now render 40 results initially, with an explicit Show more
+control adding batches of 40. All results remain reachable and the map still
+receives the full filtered collection. The shared useProgressiveList hook resets
+on changed input and focuses the first appended result for keyboard navigation.
+This is incremental rendering, not virtualization or server pagination.
+Search subtitles now include localized addresses and avoid repeating the heading.
+50 tests and lint/build/format pass; live browser verified append/reset, keyboard
+focus, final partial search batch and narrow-screen addresses. See
+[follow-up plan](IMPROVEMENT_PLAN.md) for remaining work and verification details.
