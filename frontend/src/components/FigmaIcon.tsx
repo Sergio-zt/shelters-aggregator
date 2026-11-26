@@ -16,7 +16,9 @@ export function FigmaIcon({
   const asset = figmaIcons[name];
   const width = size ?? asset.width;
   const height = (width * asset.height) / asset.width;
-  const url = encodeURI(asset.url);
+  const url = encodeURI(
+    `${import.meta.env.BASE_URL}${asset.url.replace(/^\//, '')}`,
+  );
   const shared = { width, height, ...style };
   if (original)
     return (

@@ -11,7 +11,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --max-warnings 0",
-    "check": "npm run lint && npm run build && npm test && npm run format:check"
+    "check": "npm run lint && npm run build && npm test && npm run format:check",
+    "build:pages": "tsc -b && VITE_API_MODE=mock vite build --base=/shelters-aggregator/ --outDir=dist-pages"
   },
   "dependencies": {
     "maplibre-gl": "^6.16.0",
