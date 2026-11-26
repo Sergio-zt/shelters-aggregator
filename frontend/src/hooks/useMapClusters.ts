@@ -18,7 +18,10 @@ export function useMapClusters(
   shelters: Shelter[],
   selected?: string,
 ) {
-  const serialized = JSON.stringify(shelterPoints(shelters, selected));
+  const serialized = useMemo(
+    () => JSON.stringify(shelterPoints(shelters, selected)),
+    [shelters, selected],
+  );
   const data = useMemo<FeatureCollection<Point, { shelterId: string }>>(
     () => JSON.parse(serialized),
     [serialized],

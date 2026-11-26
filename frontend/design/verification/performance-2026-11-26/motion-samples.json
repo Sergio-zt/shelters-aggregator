@@ -1,0 +1,162 @@
+[
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.113402",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 769.567)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0862784",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 793.11)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0862784",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 793.11)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0626964",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 813.58)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0626964",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 813.58)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0626964",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 813.58)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0436383",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 830.122)"
+  },
+  {
+    "phase": "menu-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0436383",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 830.122)"
+  },
+  {
+    "phase": "filters-open",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.938441",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 302.515)"
+  },
+  {
+    "phase": "filters-open",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.938441",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 302.515)"
+  },
+  {
+    "phase": "filters-open",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.965133",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 255.469)"
+  },
+  {
+    "phase": "filters-open",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.965133",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 255.469)"
+  },
+  {
+    "phase": "filters-open",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.98326",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 214.76)"
+  },
+  {
+    "phase": "filters-open",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.98326",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 214.76)"
+  },
+  {
+    "phase": "filters-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.150095",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 737.717)"
+  },
+  {
+    "phase": "filters-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.114923",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 768.246)"
+  },
+  {
+    "phase": "filters-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.114923",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 768.246)"
+  },
+  {
+    "phase": "filters-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0862565",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 793.129)"
+  },
+  {
+    "phase": "filters-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0862565",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 793.129)"
+  },
+  {
+    "phase": "filters-close",
+    "focus": null,
+    "headerY": 0,
+    "scrim": "0.0617045",
+    "scrollY": 0,
+    "transform": "matrix(1, 0, 0, 1, 0, 814.441)"
+  }
+]

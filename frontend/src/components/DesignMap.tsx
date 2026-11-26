@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom';
 import { useI18n } from '../i18n/I18nProvider';
-import { useEffect, useRef, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, type CSSProperties } from 'react';
 import type { GeoJSONSource } from 'maplibre-gl';
 import { FigmaIcon } from './FigmaIcon';
 import type { Shelter } from '../features/shelters/model';
@@ -44,7 +44,8 @@ export function DesignMap({
   moved: boolean;
   onSearchArea: (bounds: MapBounds) => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const countFormat = useMemo(() => new Intl.NumberFormat(locale), [locale]);
   const { ref, map, ready, status, retry } = useMapLibre(
     center,
     bottomInset,
@@ -224,7 +225,7 @@ export function DesignMap({
                   }
                 }}
               >
-                {item.count}
+                {countFormat.format(item.count)}
               </button>
             </MapMarker>
           );

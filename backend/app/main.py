@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.gzip import GZipMiddleware
 
 from backend.app.api.filters import router as filters_router
 from backend.app.api.places import router as places_router
@@ -9,6 +10,8 @@ app = FastAPI(
     title="Shelters Aggregator API",
     version="0.1.0",
 )
+
+app.add_middleware(GZipMiddleware, minimum_size=1000, compresslevel=5)
 
 app.include_router(visitor_router)
 app.include_router(places_router)

@@ -159,3 +159,14 @@ Search subtitles now include localized addresses and avoid repeating the heading
 50 tests and lint/build/format pass; live browser verified append/reset, keyboard
 focus, final partial search batch and narrow-screen addresses. See
 [follow-up plan](IMPROVEMENT_PLAN.md) for remaining work and verification details.
+
+## Compression and performance — 2026-11-26
+
+Backend now applies GZipMiddleware to responses >=1000 bytes (level 5) when
+clients accept gzip. Catalog JSON is unchanged; measured transfer through Vite
+preview falls from 1,741,652 to 81,093 bytes. GeoJSON serialization is memoized;
+cluster text now uses the same locale number formatting as its accessible label.
+Production Lighthouse: mobile 98, desktop 99; other categories 100. Full details,
+raw reports and motion checks: [performance audit](design/verification/performance-2026-11-26/README.md).
+These local results supersede the earlier unverified-Lighthouse note, not the
+pending Docker/production deployment checks.
