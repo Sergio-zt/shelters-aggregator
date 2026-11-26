@@ -72,11 +72,7 @@ export function FiltersSheet({
           }
         >
           {t('filters.everyone')} ·{' '}
-          {
-            shelters.filter(
-              (s) => s.access === 'always' || s.access === 'alerts',
-            ).length
-          }
+          {shelters.filter((s) => s.availableToEveryone === true).length}
         </button>
       </div>
       <h3 className="Heading-H3 facilities-heading">
@@ -97,8 +93,8 @@ export function FiltersSheet({
       <label className="filter-option">
         <Clock />
         <span>
-          {t('access.always')} ·{' '}
-          {shelters.filter((s) => s.access === 'always').length}
+          {t('filters.open24DuringAlerts')} ·{' '}
+          {shelters.filter((s) => s.open24DuringAlerts === true).length}
         </span>
         <input
           type="checkbox"

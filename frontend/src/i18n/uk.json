@@ -121,7 +121,7 @@
   "details.copied": "Адресу скопійовано",
   "details.share": "Поділитися укриттям",
   "details.copyError": "Копіювання недоступне. Виділіть адресу вище.",
-  "details.limited": "Під час тривоги вхід дозволено лише учням і працівникам цієї школи. Якщо ви не належите до них, оберіть укриття, відкрите для всіх.",
+  "details.limited": "Доступ обмежено певними групами, наприклад працівниками або учнями закладу.",
   "details.hours": "Години роботи:",
   "details.official": "Офіційні дані",
   "details.residents": "Повідомлено мешканцями",
@@ -250,5 +250,7 @@
   "distance.kilometers": "{value} км",
   "feedback.name": "Ваше ім’я",
   "feedback.namePlaceholder": "Як до вас звертатися?",
-  "feedback.exampleName": "Олена"
+  "feedback.exampleName": "Олена",
+  "access.public": "Доступне всім",
+  "filters.open24DuringAlerts": "24/7 під час тривог"
 }

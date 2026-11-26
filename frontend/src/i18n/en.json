@@ -121,7 +121,7 @@
   "details.copied": "Address copied",
   "details.share": "Share shelter",
   "details.copyError": "Copy isn’t available. Select the address above.",
-  "details.limited": "During an alert, only students and staff of this school can enter. If you are not one of them, choose a shelter open to everyone.",
+  "details.limited": "Access is restricted to certain groups, such as staff or students.",
   "details.hours": "Opening hours:",
   "details.official": "Official data",
   "details.residents": "Reported by residents",
@@ -250,5 +250,7 @@
   "distance.kilometers": "{value} km",
   "feedback.name": "Your name",
   "feedback.namePlaceholder": "How should we call you?",
-  "feedback.exampleName": "Olena"
+  "feedback.exampleName": "Olena",
+  "access.public": "Open to everyone",
+  "filters.open24DuringAlerts": "24/7 during alerts"
 }

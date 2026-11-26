@@ -1,3 +1,4 @@
+import { readFacilityFlags } from './facilities';
 import { createTranslator, localizedText, type Locale } from '../i18n/catalog';
 import { isValidCoordinates } from '../features/shelters/mapModel';
 import {
@@ -62,40 +63,38 @@ export function adaptShelters(
         ? localizedText(embedded.name, locale)
         : localizedText(dto.district, locale);
     const districtId = id(dto.district_id) || id(embedded?.id);
-    const access: Access =
+    const legacyAccess: Access =
       dto.access === 'always' ||
       dto.access === 'alerts' ||
       dto.access === 'limited'
         ? dto.access
         : 'unknown';
-    const aliases: Record<string, string> = {
-      'wi-fi': 'wifi',
-      wifi: 'wifi',
-      електрика: 'electricity',
-      electricity: 'electricity',
-      пандус: 'ramp',
-      ramp: 'ramp',
-      'можна з тваринами': 'pets',
-      'pets allowed': 'pets',
-      туалет: 'toilet',
-      toilet: 'toilet',
-    };
-    const facilities = (
-      Array.isArray(dto.facilities) ? dto.facilities : []
-    ).flatMap((item) => {
-      if (typeof item === 'string') return [item];
-      const entry = record(item);
-      return entry
-        ? ['uk', 'en']
-            .map(
-              (lang) =>
-                aliases[
-                  localizedText(entry.name, lang as Locale).toLowerCase()
-                ],
-            )
-            .filter(Boolean)
-        : [];
-    });
+    const flags = readFacilityFlags(dto.facilities);
+    const availability =
+      typeof dto.availability === 'boolean'
+        ? dto.availability
+        : flags.get('availability');
+    const open24_7 =
+      typeof dto.open_24_7 === 'boolean'
+        ? dto.open_24_7
+        : flags.get('open_24_7');
+    const availableToEveryone =
+      availability ??
+      (legacyAccess === 'always' || legacyAccess === 'alerts'
+        ? true
+        : legacyAccess === 'limited'
+          ? false
+          : undefined);
+    const open24DuringAlerts =
+      open24_7 ?? (legacyAccess === 'always' ? true : undefined);
+    const access: Access =
+      availability === false
+        ? 'limited'
+        : open24_7 === true
+          ? 'alerts'
+          : availability === true
+            ? 'public'
+            : legacyAccess;
     shelters.push({
       id: shelterId,
       name: name || t('shelter.defaultName', { id: shelterId }),
@@ -108,12 +107,14 @@ export function adaptShelters(
       districtId: districtId || undefined,
       kind: localizedText(dto.type, locale),
       access,
+      availableToEveryone,
+      open24DuringAlerts,
       capacity:
         typeof dto.capacity === 'number'
           ? new Intl.NumberFormat(locale).format(dto.capacity)
           : localizedText(dto.capacity_tier ?? dto.capacity, locale) ||
             t('common.unspecified'),
-      facilities: facilityKeys.filter((key) => facilities.includes(key)),
+      facilities: facilityKeys.filter((key) => flags.get(key) === true),
       hours:
         localizedText(dto.operating_hours ?? dto.hours, locale) || undefined,
       exampleWalk: localizedText(dto.example_walk, locale) || undefined,

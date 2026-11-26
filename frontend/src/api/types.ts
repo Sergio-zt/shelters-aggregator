@@ -20,7 +20,18 @@ export interface ShelterDto {
   type: string;
   access?: string;
   capacity?: number | LocalizedText | null;
-  facilities?: string[];
+  availability?: boolean;
+  open_24_7?: boolean;
+  facilities?: (
+    | string
+    | {
+        id?: string | number;
+        name?: LocalizedText;
+        icon_name?: string;
+        code?: string;
+        value?: boolean;
+      }
+  )[];
   hours?: LocalizedText;
   example_walk?: LocalizedText;
   latitude: number | string;

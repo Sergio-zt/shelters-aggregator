@@ -87,6 +87,12 @@ export function ShelterDetails({
       )}
       <div className="details-summary surface">
         <ShelterMeta shelter={shelter} distance={distance} />
+        {shelter.open24DuringAlerts === true && (
+          <p className="Body-S-Regular">
+            <Clock small />
+            {t('filters.open24DuringAlerts')}
+          </p>
+        )}
         {shelter.hours && (
           <p className="Body-S-Regular">
             <Clock small />

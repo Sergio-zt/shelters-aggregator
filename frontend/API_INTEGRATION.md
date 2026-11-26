@@ -170,3 +170,26 @@ Production Lighthouse: mobile 98, desktop 99; other categories 100. Full details
 raw reports and motion checks: [performance audit](design/verification/performance-2026-11-26/README.md).
 These local results supersede the earlier unverified-Lighthouse note, not the
 pending Docker/production deployment checks.
+
+## Confirmed facility semantics and mapping
+
+Backend clarified: availability means access for everyone; open_24_7 means
+24/7 access **during alerts**, not permanently open. Other known codes are
+wifi, electricity, pets, ramp and toilet. Frontend now maps icon_name (preferred),
+then code, then known old Ukrainian/English facility names to existing icons.
+Unknown explicit codes do not fall back to potentially misleading display names.
+
+Availability and alert-hours are separate optional booleans in the UI model.
+Present facilities in the current positive-only list mean true. Missing entries
+remain unknown. Explicit boolean value on a coded facility and direct boolean
+availability/open_24_7 fields are supported defensively; their final wire format
+is not yet confirmed. False restricts the availability badge; open_24_7 alone
+never implies public access. Legacy explicit access remains supported for mocks.
+The 24/7 filter and detail copy explicitly say during alerts. Public access with
+unknown hours has a separate label, without assuming any schedule.
+
+Live local catalog check: 2806 records; 2379 availability true, 2223 open_24_7
+true, 427 availability unknown, 403 Wi-Fi. These counts describe source claims,
+not real-time opening status. Name/icon_name DTO additions remain backend work.
+54 tests and full frontend check pass, including independent/combined filters,
+explicit false, missing data, stable icon codes and old-label compatibility.

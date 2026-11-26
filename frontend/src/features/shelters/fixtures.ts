@@ -53,6 +53,8 @@ export const demoShelters: Shelter[] = seeds.map((seed) => {
     en[`demo.${seed.id}.${field}` as TranslationKey];
   return {
     ...seed,
+    availableToEveryone: seed.access !== 'limited',
+    open24DuringAlerts: seed.access === 'always',
     name: text('name'),
     address: text('address'),
     district: en['district.sviatoshyn'],

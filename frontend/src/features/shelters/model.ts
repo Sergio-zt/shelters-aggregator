@@ -1,5 +1,5 @@
 import type { Coordinates } from '../../geo';
-export type Access = 'alerts' | 'always' | 'limited' | 'unknown';
+export type Access = 'alerts' | 'always' | 'limited' | 'unknown' | 'public';
 export type Facility = 'ramp' | 'pets' | 'wifi' | 'electricity' | 'toilet';
 export type ShelterKind =
   'Metro' | 'Basement' | 'Underpass' | 'Semi-basement' | 'Parking' | 'Other';
@@ -12,6 +12,8 @@ export interface Shelter {
   /** Backend type name, preserved for display; pin selection handles aliases. */
   kind: string;
   access: Access;
+  availableToEveryone?: boolean;
+  open24DuringAlerts?: boolean;
   capacity: string;
   facilities: Facility[];
   hours?: string;
@@ -38,10 +40,8 @@ export const facilityKeys: Facility[] = [
 ];
 export function matchesFilters(shelter: Shelter, filters: Filters) {
   return (
-    (!filters.everyone ||
-      shelter.access === 'always' ||
-      shelter.access === 'alerts') &&
-    (!filters.always || shelter.access === 'always') &&
+    (!filters.everyone || shelter.availableToEveryone === true) &&
+    (!filters.always || shelter.open24DuringAlerts === true) &&
     filters.facilities.every((facility) =>
       shelter.facilities.includes(facility),
     )

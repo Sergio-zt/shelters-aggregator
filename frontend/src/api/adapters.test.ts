@@ -165,3 +165,116 @@ test('address-only search results do not repeat their heading in the subtitle', 
   assert.equal(place.name, 'API address');
   assert.equal(place.description, '');
 });
+
+test('backend facility codes select icons independently of translated names', () => {
+  const shelter = adaptShelters(
+    [
+      {
+        ...row,
+        facilities: [
+          { icon_name: 'wifi', name: { uk: 'Нова назва' } },
+          { icon_name: 'electricity' },
+          { icon_name: 'pets' },
+          { icon_name: 'ramp' },
+          { icon_name: 'toilet' },
+          { icon_name: 'unrecognized', name: 'Wi-Fi' },
+        ],
+      },
+    ],
+    [],
+    'uk',
+  ).shelters[0];
+  assert.deepEqual(shelter.facilities, [
+    'ramp',
+    'pets',
+    'wifi',
+    'electricity',
+    'toilet',
+  ]);
+});
+
+test('24/7 during alerts never implies access for everyone', () => {
+  const shelter = adaptShelters(
+    [{ ...row, facilities: ['open_24_7'] }],
+    [],
+    'uk',
+  ).shelters[0];
+  assert.equal(shelter.access, 'alerts');
+  assert.equal(shelter.availableToEveryone, undefined);
+  assert.equal(shelter.open24DuringAlerts, true);
+  assert.equal(
+    matchesFilters(shelter, { ...emptyFilters, everyone: true }),
+    false,
+  );
+  assert.equal(
+    matchesFilters(shelter, { ...emptyFilters, always: true }),
+    true,
+  );
+});
+
+test('explicit negatives and absent flags are distinct; restrictions win over hours', () => {
+  const shelter = adaptShelters(
+    [
+      {
+        ...row,
+        facilities: [
+          { code: 'availability', value: false },
+          { code: 'open_24_7', value: true },
+          { icon_name: 'wifi', value: false },
+          { icon_name: 'electricity', value: 'false' },
+        ],
+      },
+    ],
+    [],
+    'en',
+  ).shelters[0];
+  assert.equal(shelter.access, 'limited');
+  assert.equal(shelter.availableToEveryone, false);
+  assert.equal(shelter.open24DuringAlerts, true);
+  assert.deepEqual(shelter.facilities, []);
+  assert.equal(
+    matchesFilters(shelter, { ...emptyFilters, always: true }),
+    true,
+  );
+  assert.equal(
+    matchesFilters(shelter, { ...emptyFilters, always: true, everyone: true }),
+    false,
+  );
+  const unknown = adaptShelters([{ ...row, facilities: [] }], [], 'uk')
+    .shelters[0];
+  assert.equal(unknown.access, 'unknown');
+  assert.equal(unknown.availableToEveryone, undefined);
+  assert.equal(unknown.open24DuringAlerts, undefined);
+});
+
+test('availability alone does not assert hours; old backend labels still map', () => {
+  const publicShelter = adaptShelters(
+    [{ ...row, facilities: ['availability'] }],
+    [],
+    'uk',
+  ).shelters[0];
+  assert.equal(publicShelter.access, 'public');
+  assert.equal(
+    matchesFilters(publicShelter, { ...emptyFilters, everyone: true }),
+    true,
+  );
+  assert.equal(
+    matchesFilters(publicShelter, { ...emptyFilters, always: true }),
+    false,
+  );
+  const legacy = adaptShelters(
+    [
+      {
+        ...row,
+        facilities: [
+          { name: { uk: 'Доступність' } },
+          { name: { uk: 'Цілодобово' } },
+        ],
+      },
+    ],
+    [],
+    'en',
+  ).shelters[0];
+  assert.equal(legacy.availableToEveryone, true);
+  assert.equal(legacy.open24DuringAlerts, true);
+});
