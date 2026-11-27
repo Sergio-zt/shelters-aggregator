@@ -53,6 +53,7 @@ class PlaceCatalogResponse(BaseModel):
     id: int
     external_id: str | None = None
     district_id: int | None = None
+    name: MultiLanguage | None = None
     address: MultiLanguage | None = None
     type: MultiLanguage | None = None
     capacity_tier: MultiLanguage | None = None
@@ -75,6 +76,7 @@ class PlaceRetrieveResponse(BaseModel):
     id: int
     external_id: str | None = None
     district: DistrictResponse | None = None
+    name: MultiLanguage | None = None
     address: MultiLanguage | None = None
     type: MultiLanguage | None = None
     capacity_tier: MultiLanguage | None = None
